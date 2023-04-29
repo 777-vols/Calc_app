@@ -1,33 +1,40 @@
-import { StyledHeader, Container, Header__inner, Logo, Menu, Menu__list, Menu__list_item, LogoLink, MenuLink } from "./styled";
+import { StyledHeader, Container, Header__inner, Menu__list, LinkWrapper, LogoLink, MenuLink } from "./styled";
 
 const Header = () => {
+
 	return (
 		<StyledHeader>
 			<Container>
 				<Header__inner>
-					<Logo>
+					<LinkWrapper>
 						<LogoLink to="/">Calculator App</LogoLink>
-					</Logo>
+					</LinkWrapper>
 
-					<Menu>
+					<nav>
 						<Menu__list>
-							<Menu__list_item>
-								<MenuLink to="/">
-									Home FC
-								</MenuLink>
-							</Menu__list_item>
-							<Menu__list_item>
-								<MenuLink to="/homeCC">
-									Home CC
-								</MenuLink>
-							</Menu__list_item>
-							<Menu__list_item>
-								<MenuLink to="/settings">
-									Settings
-								</MenuLink>
-							</Menu__list_item>
+							<li>
+								<LinkWrapper>
+									<MenuLink to="/">
+										Home FC
+									</MenuLink>
+								</LinkWrapper>
+							</li>
+							<li>
+								<LinkWrapper>
+									<MenuLink to="/homeCC">
+										Home CC
+									</MenuLink>
+								</LinkWrapper>
+							</li>
+							<li>
+								<LinkWrapper>
+									<MenuLink to="/settings">
+										Settings
+									</MenuLink>
+								</LinkWrapper>
+							</li>
 						</Menu__list>
-					</Menu>
+					</nav>
 
 				</Header__inner>
 			</Container>

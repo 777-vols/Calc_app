@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const AppWrapper = styled.div`
-	@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-	font-family: 'Open Sans', sans-serif;
+	@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+	font-family: 'Roboto', sans-serif;
 	max-width: 100%;
-	min-width: 450px;
 	width: 100%;
-	height: 100vh;
+	min-height: 100vh;
+	height: 100%;
 	background-color: grey;
 	color: black;
 `;
