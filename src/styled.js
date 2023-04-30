@@ -7,6 +7,6 @@ export const AppWrapper = styled.div`
 	width: 100%;
 	min-height: 100vh;
 	height: 100%;
-	background-color: grey;
+	/* background-color: #636363; */
 	color: black;
 `;

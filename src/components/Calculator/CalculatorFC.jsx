@@ -1,8 +1,20 @@
+import Keyboard from "../Keyboard/Index";
+import History from "../History/Index";
+import Screen from "../Screen/Index";
+import { CalculatorWrapper } from "./styled";
+import { Container } from "../Header/styled";
+
 const CalculatorFC = () => {
 	return (
-		<div>
-			<h1>CalculatorFC</h1>
-		</div>
+		<main>
+			<Container>
+				<CalculatorWrapper>
+					<Screen result={"12311232343.45"} />
+					<Keyboard />
+					<History />
+				</CalculatorWrapper>
+			</Container>
+		</main>
 	)
 }
 
