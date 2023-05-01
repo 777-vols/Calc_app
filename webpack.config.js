@@ -1,26 +1,37 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require("webpack");
 
 module.exports = {
-	mode: "development",
+	mode: 'development',
+	target: "web",
+	devtool: "source-map",
 	entry: ["@babel/polyfill", "./src/index.jsx"],
 	output: {
-		path: path.resolve(__dirname, "dist"),
+		path: path.resolve(__dirname, "./dist"),
 		filename: "[name].[hash].js",
 	},
 	devServer: {
 		port: 3000,
-		hot: false
+		open: true,
+		hot: true,
+		historyApiFallback: true
 	},
 	resolve: {
 		extensions: [".jsx", ".js", ".scss"],
 	},
 	plugins: [
-		new HtmlWebpackPlugin({
-			template: "./public/index.html"
-		}),
 		new CleanWebpackPlugin(),
+		new webpack.HotModuleReplacementPlugin(),
+		new HtmlWebpackPlugin({
+			title: "Calc_app",
+			template: "./public/index.html",
+			favicon: "./public/favicon.png"
+		}),
+		// new MiniCssExtractPlugin({
+		// 	filename: production ? '[name].[contenthash].css' : '[name].css',
+		// }),
 	],
 	module: {
 		rules: [

@@ -11,3 +11,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 		<App />
 	</BrowserRouter>
 );
+
+
+
+if ('development' && module && module.hot) {
+	module.hot.accept();
+}

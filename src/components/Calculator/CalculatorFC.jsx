@@ -9,7 +9,7 @@ const CalculatorFC = () => {
 		<main>
 			<Container>
 				<CalculatorWrapper>
-					<Screen result={"12311232343.45"} />
+					<Screen result={"12232343.45"} />
 					<Keyboard />
 					<History />
 				</CalculatorWrapper>
