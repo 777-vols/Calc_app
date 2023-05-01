@@ -1,5 +1,5 @@
 import { HistoryWrapper, HistoryHeaderWrapper, HistoryHeader, HistoryResults } from "./styled";
-import HistoryItem from "../HistoryItem/Index";
+import HistoryItem from "./HistoryItem/IndexFC";
 
 const History = () => {
 	return (

@@ -1,5 +1,5 @@
 import { KeyboardWrapper } from "./styled";
-import ButtonComponent from "../Button";
+import ButtonComponent from "./Button/indexFC";
 
 const Keyboard = () => {
 	return (

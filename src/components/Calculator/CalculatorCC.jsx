@@ -1,6 +1,6 @@
-import Keyboard from "../Keyboard/Index";
-import History from "../History/Index";
-import Screen from "../Screen/Index";
+import Keyboard from "./Keyboard/IndexCC";
+import History from "./History/IndexCC";
+import Screen from "./Screen/IndexCC";
 import { CalculatorWrapper } from "./styled";
 import { Container } from "../Header/styled";
 import React from "react";

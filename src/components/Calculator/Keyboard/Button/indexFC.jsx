@@ -1,7 +1,6 @@
 import { ButtonWrapper, Button } from "./styled";
 
 const ButtonComponent = ({ value }) => {
-
 	return (
 		<ButtonWrapper>
 			<Button>
