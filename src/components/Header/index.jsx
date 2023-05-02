@@ -1,17 +1,17 @@
-import { StyledHeader, Container, Header__inner, Menu__list, LinkWrapper, LogoLink, MenuLink } from "./styled";
+import { StyledHeader, Container, HeaderInner, MenuList, LinkWrapper, LogoLink, MenuLink } from "./styled";
 
 const Header = () => {
 
 	return (
 		<StyledHeader>
 			<Container>
-				<Header__inner>
+				<HeaderInner>
 					<LinkWrapper>
 						<LogoLink to="/">Calculator App</LogoLink>
 					</LinkWrapper>
 
 					<nav>
-						<Menu__list>
+						<MenuList>
 							<li>
 								<LinkWrapper>
 									<MenuLink to="/">
@@ -33,13 +33,13 @@ const Header = () => {
 									</MenuLink>
 								</LinkWrapper>
 							</li>
-						</Menu__list>
+						</MenuList>
 					</nav>
 
-				</Header__inner>
+				</HeaderInner>
 			</Container>
 		</StyledHeader>
-	)
-}
+	);
+};
 
 export default Header;

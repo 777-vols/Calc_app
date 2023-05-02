@@ -1,5 +1,5 @@
-import { HistoryItemWrapper, HistoryItemResult } from "./styled";
 import React from "react";
+import { HistoryItemWrapper, HistoryItemResult } from "./styled";
 
 class HistoryItem extends React.Component {
 	render() {
@@ -8,7 +8,7 @@ class HistoryItem extends React.Component {
 			<HistoryItemWrapper>
 				<HistoryItemResult>{result}</HistoryItemResult>
 			</HistoryItemWrapper>
-		)
+		);
 	}
 }
 

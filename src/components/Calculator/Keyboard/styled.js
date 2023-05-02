@@ -13,4 +13,4 @@ export const KeyboardWrapper = styled.div`
 	@media (max-width: 500px) {
 		min-height: 36vh
 	}
-`
+`;

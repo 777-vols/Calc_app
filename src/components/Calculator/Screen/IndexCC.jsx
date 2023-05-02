@@ -1,5 +1,5 @@
-import { ScreenWrapper, Result } from "./styled";
 import React from "react";
+import { ScreenWrapper, Result } from "./styled";
 
 class Screen extends React.Component {
 	render() {
@@ -8,7 +8,7 @@ class Screen extends React.Component {
 			<ScreenWrapper>
 				<Result>{result}</Result>
 			</ScreenWrapper>
-		)
+		);
 	}
 }
 

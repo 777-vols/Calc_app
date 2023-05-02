@@ -23,5 +23,5 @@ export const CalculatorWrapper = styled.div`
 		grid-template-columns: 1fr;
 		grid-gap: 10px;
 	}
-`
+`;
 

@@ -5,7 +5,7 @@ export const ButtonWrapper = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-`
+`;
 export const Button = styled.button`
 	width: 105px;
 	height: 105px;
@@ -28,4 +28,4 @@ export const Button = styled.button`
 		font-size: 22px;
 		border-radius: 15px;
 	}
-`
+`;

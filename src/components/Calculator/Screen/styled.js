@@ -30,7 +30,7 @@ export const ScreenWrapper = styled.div`
 		padding: 0px 15px;
 		padding-bottom: 5px;
 	}
-`
+`;
 export const Result = styled.span`
 	max-width: 78vw;
 	font-size: 42px;
@@ -41,4 +41,4 @@ export const Result = styled.span`
 	@media (max-width: 500px) {
 		font-size: 30px;
 	}
-`
+`;

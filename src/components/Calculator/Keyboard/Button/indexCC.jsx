@@ -1,5 +1,5 @@
-import { ButtonWrapper, Button } from "./styled";
 import React from "react";
+import { ButtonWrapper, Button } from "./styled";
 
 class ButtonComponent extends React.Component {
 	render() {
@@ -10,7 +10,7 @@ class ButtonComponent extends React.Component {
 					{value}
 				</Button>
 			</ButtonWrapper>
-		)
+		);
 	}
 }
 

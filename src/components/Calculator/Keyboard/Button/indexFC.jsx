@@ -7,7 +7,7 @@ const ButtonComponent = ({ value }) => {
 				{value}
 			</Button>
 		</ButtonWrapper>
-	)
-}
+	);
+};
 
 export default ButtonComponent;

@@ -5,7 +5,7 @@ const Screen = ({ result }) => {
 		<ScreenWrapper>
 			<Result>{result}</Result>
 		</ScreenWrapper>
-	)
-}
+	);
+};
 
 export default Screen;

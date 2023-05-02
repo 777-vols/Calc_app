@@ -24,7 +24,7 @@ const Settings = () => {
 				</SettingsWrapper>
 			</Container>
 		</main>
-	)
-}
+	);
+};
 
 export default Settings;

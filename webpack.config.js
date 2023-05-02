@@ -1,10 +1,11 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ESLintPlugin = require("eslint-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const webpack = require("webpack");
 
 module.exports = {
-	mode: 'development',
+	mode: "development",
 	target: "web",
 	devtool: "source-map",
 	entry: ["@babel/polyfill", "./src/index.jsx"],
@@ -24,14 +25,12 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
+		new ESLintPlugin(),
 		new HtmlWebpackPlugin({
 			title: "Calc_app",
 			template: "./public/index.html",
 			favicon: "./public/favicon.png"
-		}),
-		// new MiniCssExtractPlugin({
-		// 	filename: production ? '[name].[contenthash].css' : '[name].css',
-		// }),
+		})
 	],
 	module: {
 		rules: [
@@ -46,8 +45,8 @@ module.exports = {
 			},
 			{
 				test: /\.(jpg|jpeg|png|svg)/,
-				use: ['file-loader']
+				use: ["file-loader"]
 			},
 		]
 	}
-}
+};

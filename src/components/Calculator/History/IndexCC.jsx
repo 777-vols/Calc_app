@@ -1,6 +1,6 @@
+import React from "react";
 import { HistoryWrapper, HistoryHeaderWrapper, HistoryHeader, HistoryResults } from "./styled";
 import HistoryItem from "./HistoryItem/IndexCC";
-import React from "react";
 
 class History extends React.Component {
 	render() {
@@ -37,7 +37,7 @@ class History extends React.Component {
 					<HistoryItem result={"10 * 2 / 4 = 5"} />
 				</HistoryResults>
 			</HistoryWrapper>
-		)
+		);
 	}
 }
 

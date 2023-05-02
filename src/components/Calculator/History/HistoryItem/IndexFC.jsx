@@ -5,7 +5,7 @@ const HistoryItem = ({ result }) => {
 		<HistoryItemWrapper>
 			<HistoryItemResult>{result}</HistoryItemResult>
 		</HistoryItemWrapper>
-	)
-}
+	);
+};
 
 export default HistoryItem;

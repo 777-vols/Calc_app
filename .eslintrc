@@ -1,0 +1,44 @@
+{
+	"extends": [
+		"react-app",
+		"react-app/jest"
+	],
+	"parser": "@babel/eslint-parser",
+	"rules": {
+		"no-console": "warn",
+		"prefer-const": "error",
+		"jsx-quotes": [
+			"error",
+			"prefer-double"
+		],
+		"quotes": [
+			"error",
+			"double"
+		],
+		"max-len": [
+			"error",
+			{
+				"code": 120
+			}
+		],
+		"semi": [
+			"warn",
+			"always"
+		],
+		"import/order": [
+			"error",
+			{
+				"groups": [
+					"builtin",
+					"external",
+					"internal",
+					"parent",
+					"sibling",
+					"index",
+					"object",
+					"type"
+				]
+			}
+		]
+	}
+}

@@ -11,16 +11,16 @@ export const HistoryWrapper = styled.div`
 		border-left: none;
 		border-top: 2px solid grey;
 	}
-`
+`;
 export const HistoryHeaderWrapper = styled.div`
 	display: flex;
 	justify-content: center;
 	padding: 5px 0;
-	`
+	`;
 export const HistoryHeader = styled.h2`
 	font-weight: 500;
 	font-size: 22px;
-	`
+	`;
 export const HistoryResults = styled.div`
 	margin-top: 15px;
 	display: flex;
@@ -44,4 +44,4 @@ export const HistoryResults = styled.div`
 		background: rgb(52, 52, 52);
 		border-radius: 10px;
 	}
-`
+`;

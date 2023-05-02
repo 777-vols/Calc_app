@@ -35,7 +35,7 @@ const History = () => {
 				<HistoryItem result={"10 * 2 / 4 = 5"} />
 			</HistoryResults>
 		</HistoryWrapper>
-	)
-}
+	);
+};
 
 export default History;

@@ -1,32 +1,32 @@
 import styled from "styled-components";
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 
 export const StyledHeader = styled.header`
 	background: rgb(52, 52, 52);
-`
+`;
 export const Container = styled.div`
 	max-width: 100%;
 	padding: 15px;
-`
-export const Header__inner = styled.div`
+`;
+export const HeaderInner = styled.div`
 	min-height: 40px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-`
-export const Menu__list = styled.ul`
+`;
+export const MenuList = styled.ul`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-`
+`;
 export const LinkWrapper = styled.div`
 	padding: 0 20px 0 20px;
 
 	@media (max-width: 600px) {
    	padding: 0 7px 0 7px;
 	}
-`
+`;
 export const LogoLink = styled(NavLink)`
 	cursor: pointer;
 	font-size: 21px;
@@ -37,7 +37,7 @@ export const LogoLink = styled(NavLink)`
 	@media (max-width: 600px) {
    	font-size: 16px;
 	}
-`
+`;
 export const MenuLink = styled(NavLink)`
 	text-decoration: none;
 	cursor: pointer;
@@ -72,5 +72,5 @@ export const MenuLink = styled(NavLink)`
 		display: inline-block;
    	margin: 2px 0;
 	}
-`
+`;
 

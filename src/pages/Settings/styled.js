@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const SettingsWrapper = styled.div`
 	padding: 20px 40px;
-`
+`;
 export const SettingsHeader = styled.h1`
 	font-weight: 500;
 	font-size: 40px;
@@ -10,17 +10,17 @@ export const SettingsHeader = styled.h1`
 	@media (max-width: 600px) {
    	font-size: 35px;
 	}
-`
+`;
 export const SettingsPanel = styled.div`
 	padding-left: 5px;
 	margin-top: 25px;
 	max-width: 240px;
-`
+`;
 
 export const SelecorHeader = styled.h6`
 font-size: 16px;
 font-weight: 500;
-`
+`;
 export const SettingsSelector = styled.select`
 	width: 100%;
 	min-width: 170px;
@@ -36,7 +36,7 @@ export const SettingsSelector = styled.select`
 	@media (max-width: 600px) {
    	font-size: 16px;
 	}
-`
+`;
 export const ClearButton = styled.button`
 	width: 100%;
 	min-width: 170px;
@@ -57,4 +57,4 @@ export const ClearButton = styled.button`
 	@media (max-width: 600px) {
    	font-size: 15px;
 	}
-`
+`;
