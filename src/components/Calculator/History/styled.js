@@ -4,12 +4,12 @@ import styled from "styled-components";
 export const HistoryWrapper = styled.div`
 	grid-area: h;
 	padding-left: 15px;
-	border-left: 2px solid grey;
+	border-left: 2px solid ${props => props.theme.color};
 	min-width: 20vw;
 
 	@media (max-width: 500px) {
 		border-left: none;
-		border-top: 2px solid grey;
+		border-top: 2px solid ${props => props.theme.color};
 	}
 `;
 export const HistoryHeaderWrapper = styled.div`

@@ -7,6 +7,6 @@ export const AppWrapper = styled.div`
 	width: 100%;
 	min-height: 100vh;
 	height: 100%;
-	/* background-color: #636363; */
-	color: black;
+	background-color: ${props => props.theme.background};
+	color: ${props => props.theme.color};
 `;

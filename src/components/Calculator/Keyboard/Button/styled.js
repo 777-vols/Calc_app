@@ -11,8 +11,11 @@ export const Button = styled.button`
 	height: 105px;
 	font-size: 42px;
 	border-radius: 20px;
-	border: 2px solid grey;
-	
+	border: 2px solid ${props => props.theme.color};
+	transition: 0.1s;
+	background-color: ${props => props.theme.buttonBackground};
+	color:${props => props.theme.color};
+
 	&:hover{
 		background-color: rgba(255, 255, 255, 0.7);
 	}

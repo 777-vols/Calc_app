@@ -5,7 +5,7 @@ export const KeyboardWrapper = styled.div`
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 	grid-template-rows: repeat(4, 1fr);
-	border-top: 2px solid grey;
+	border-top: 2px solid ${props => props.theme.color};
 
 	@media (max-width: 750px) {
 		min-height: 50vh

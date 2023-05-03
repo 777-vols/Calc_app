@@ -26,12 +26,14 @@ export const SettingsSelector = styled.select`
 	min-width: 170px;
 	margin-top: 4px;
 	appearance: none;
-	border: 2px solid black;
+	border: 2px solid ${props => props.theme.color};
 	border-radius: 5px;
 	font-size: 19px;
 	padding: 15px;
 	outline: none;
 	cursor: pointer;
+	background-color: ${props => props.theme.buttonBackground};
+	color:${props => props.theme.color};
 
 	@media (max-width: 600px) {
    	font-size: 16px;
@@ -43,15 +45,17 @@ export const ClearButton = styled.button`
 	display: flex;
 	flex-wrap: nowrap;
 	margin-top: 18px;
-	border: 2px solid black;
+	border: 2px solid ${props => props.theme.color};
 	border-radius: 5px;
 	font-size: 19px;
 	padding: 15px;
 	text-align: left;
 	cursor: pointer;
+	background-color: ${props => props.theme.buttonBackground};
+	color:${props => props.theme.color};
 
 	&:active{
-		background-color: white;
+		background-color: rgba(255, 255, 255, 0.7);
 	}
 
 	@media (max-width: 600px) {
