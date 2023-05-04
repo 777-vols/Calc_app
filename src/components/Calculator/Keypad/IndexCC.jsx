@@ -1,11 +1,11 @@
 import React from "react";
-import { KeyboardWrapper } from "./styled";
+import { KeypadWrapper } from "./styled";
 import ButtonComponent from "./Button/indexCC";
 
-class Keyboard extends React.Component {
+class Keypad extends React.Component {
 	render() {
 		return (
-			<KeyboardWrapper>
+			<KeypadWrapper>
 				<ButtonComponent value={"1"} />
 				<ButtonComponent value={"2"} />
 				<ButtonComponent value={"3"} />
@@ -26,9 +26,9 @@ class Keyboard extends React.Component {
 				<ButtonComponent value={"18"} />
 				<ButtonComponent value={"19"} />
 				<ButtonComponent value={"20"} />
-			</KeyboardWrapper>
+			</KeypadWrapper>
 		);
 	}
 }
 
-export default Keyboard;
+export default Keypad;

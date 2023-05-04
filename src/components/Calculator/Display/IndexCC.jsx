@@ -1,15 +1,15 @@
 import React from "react";
-import { ScreenWrapper, Result } from "./styled";
+import { DisplayWrapper, Result } from "./styled";
 
-class Screen extends React.Component {
+class Display extends React.Component {
 	render() {
 		const { result } = this.props;
 		return (
-			<ScreenWrapper>
+			<DisplayWrapper>
 				<Result>{result}</Result>
-			</ScreenWrapper>
+			</DisplayWrapper>
 		);
 	}
 }
 
-export default Screen;
+export default Display;

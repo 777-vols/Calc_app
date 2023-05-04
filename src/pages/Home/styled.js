@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const CalculatorWrapper = styled.div`
 	display: grid;
 	height: 86.7vh;

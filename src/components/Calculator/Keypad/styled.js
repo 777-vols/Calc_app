@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const KeyboardWrapper = styled.div`
+export const KeypadWrapper = styled.div`
 	grid-area: k;
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);

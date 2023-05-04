@@ -1,11 +1,11 @@
-import { ScreenWrapper, Result } from "./styled";
+import { DisplayWrapper, Result } from "./styled";
 
-const Screen = ({ result }) => {
+const Display = ({ result }) => {
 	return (
-		<ScreenWrapper>
+		<DisplayWrapper>
 			<Result>{result}</Result>
-		</ScreenWrapper>
+		</DisplayWrapper>
 	);
 };
 
-export default Screen;
+export default Display;

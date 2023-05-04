@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-export const ScreenWrapper = styled.div`
+export const DisplayWrapper = styled.div`
 	grid-area: s;
 	padding: 0px 80px 0px 40px;
 	display: flex;

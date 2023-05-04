@@ -1,9 +1,9 @@
-import { KeyboardWrapper } from "./styled";
+import { KeypadWrapper } from "./styled";
 import ButtonComponent from "./Button/indexFC";
 
-const Keyboard = () => {
+const Keypad = () => {
 	return (
-		<KeyboardWrapper>
+		<KeypadWrapper>
 			<ButtonComponent value={"1"} />
 			<ButtonComponent value={"2"} />
 			<ButtonComponent value={"3"} />
@@ -24,9 +24,8 @@ const Keyboard = () => {
 			<ButtonComponent value={"18"} />
 			<ButtonComponent value={"19"} />
 			<ButtonComponent value={"20"} />
-
-		</KeyboardWrapper>
+		</KeypadWrapper>
 	);
 };
 
-export default Keyboard;
+export default Keypad;
