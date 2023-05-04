@@ -1,8 +1,8 @@
 import { Container } from "../Header/styled";
 import { CalculatorWrapper } from "./styled";
-import Keyboard from "./Keyboard/IndexFC";
+import Keyboard from "./Keypad/IndexFC";
 import History from "./History/IndexFC";
-import Screen from "./Screen/IndexFC";
+import Screen from "./Display/IndexFC";
 
 const CalculatorFC = () => {
 	return (

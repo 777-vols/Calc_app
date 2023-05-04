@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import App from "./App";
 import { Global } from "./GlobalStyled";
+import ErrorBoundary from "./components/ErrorBoundary/Index";
 
 const theme = {
 	colors: {
@@ -26,12 +27,14 @@ const theme = {
 };
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-	<ThemeProvider theme={theme.colors.light}>
-		<BrowserRouter>
-			<Global />
-			<App />
-		</BrowserRouter>
-	</ThemeProvider>
+	<ErrorBoundary>
+		<ThemeProvider theme={theme.colors.light}>
+			<BrowserRouter>
+				<Global />
+				<App />
+			</BrowserRouter>
+		</ThemeProvider>
+	</ErrorBoundary>
 );
 
 
