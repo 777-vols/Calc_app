@@ -4,17 +4,23 @@ import Header from "@components/Header";
 import Settings from "@pages/Settings";
 import HomeCC from "@pages/Home/HomeCC";
 import HomeFC from "@pages/Home/HomeFC";
+import { ThemeProvider } from "styled-components";
+import { useSelector } from "react-redux";
+
 
 const App = () => {
+	const theme = useSelector(state => state.themes.currentTheme);
 	return (
-		<AppWrapper>
-			<Header />
-			<Routes>
-				<Route path="/" element={<HomeFC />} />
-				<Route path={"/homeCC"} element={<HomeCC />} />
-				<Route path={"/settings"} element={<Settings />} />
-			</Routes>
-		</AppWrapper>
+		<ThemeProvider theme={theme}>
+			<AppWrapper>
+				<Header />
+				<Routes>
+					<Route path="/" element={<HomeFC />} />
+					<Route path={"/homeCC"} element={<HomeCC />} />
+					<Route path={"/settings"} element={<Settings />} />
+				</Routes>
+			</AppWrapper>
+		</ThemeProvider>
 	);
 };
 
