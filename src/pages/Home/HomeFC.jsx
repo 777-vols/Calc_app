@@ -10,7 +10,7 @@ const HomeFC = () => {
 		<main>
 			<Container>
 				<CalculatorWrapper>
-					<Display result={"12311232343.45"} />
+					<Display />
 					<Keypad />
 					<History />
 				</CalculatorWrapper>

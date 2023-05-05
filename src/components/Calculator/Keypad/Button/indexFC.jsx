@@ -1,9 +1,9 @@
 import { ButtonWrapper, Button } from "./styled";
 
-const ButtonComponent = ({ value }) => {
+const ButtonComponent = ({ value, func }) => {
 	return (
 		<ButtonWrapper>
-			<Button>
+			<Button onClick={() => func(value)}>
 				{value}
 			</Button>
 		</ButtonWrapper>

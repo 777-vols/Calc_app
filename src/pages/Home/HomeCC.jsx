@@ -1,8 +1,8 @@
 import React from "react";
 import { Container } from "@components/Header/styled";
-import Keypad from "@components/Calculator/Keypad/IndexFC";
-import History from "@components/Calculator/History/IndexFC";
-import Display from "@components/Calculator/Display/IndexFC";
+import Keypad from "@components/Calculator/Keypad/IndexCC";
+import History from "@components/Calculator/History/IndexCC";
+import Display from "@components/Calculator/Display/IndexCC";
 import { CalculatorWrapper } from "./styled";
 
 class HomeCC extends React.Component {
