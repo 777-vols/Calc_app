@@ -6,9 +6,9 @@ import { KeypadWrapper } from "./styled";
 
 const Keypad = () => {
 	const dispatch = useDispatch();
-	function buttonClick(value) {
+	const buttonClick = (value) => {
 		ButtonsClickHandler(dispatch, value);
-	}
+	};
 	const buttonsList = buttons.map((el, i) => <ButtonComponent key={i} value={el} func={buttonClick} />);
 
 	return (

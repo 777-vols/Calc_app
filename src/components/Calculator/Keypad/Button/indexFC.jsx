@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { ButtonWrapper, Button } from "./styled";
 
 const ButtonComponent = ({ value, func }) => {
@@ -8,6 +9,11 @@ const ButtonComponent = ({ value, func }) => {
 			</Button>
 		</ButtonWrapper>
 	);
+};
+
+ButtonComponent.propTypes = {
+	value: PropTypes.string,
+	func: PropTypes.func,
 };
 
 export default ButtonComponent;

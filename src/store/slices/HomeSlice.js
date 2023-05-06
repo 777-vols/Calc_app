@@ -22,11 +22,11 @@ const homeSlice = createSlice({
 		divide() { },
 		multiply() { },
 		equal() { },
-		clearExpression() { },
+		clearValue() { },
 		clearAll() { },
 		leftBracket() { },
 		rightBracket() { },
-		diviWithRemainder() { },
+		divWithRemainder() { },
 	}
 });
 
@@ -41,7 +41,7 @@ export const {
 	clearAll,
 	leftBracket,
 	rightBracket,
-	diviWithRemainder
+	divWithRemainder
 } = homeSlice.actions;
 
 export default homeSlice.reducer;

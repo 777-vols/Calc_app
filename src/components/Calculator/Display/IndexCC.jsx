@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { DisplayWrapper, Result } from "./styled";
 
 class Display extends React.Component {
@@ -12,4 +13,7 @@ class Display extends React.Component {
 	}
 }
 
-export default Display;
+const mapStateToProps = (state) => ({
+	result: state.home.currentValue,
+});
+export default connect(mapStateToProps)(Display);
