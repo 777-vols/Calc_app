@@ -2,10 +2,12 @@ import { useSelector } from "react-redux";
 import { DisplayWrapper, Result } from "./styled";
 
 const Display = () => {
-	const result = useSelector(state => state.home.currentValue);
+	const result = useSelector(state => state.home.currentResult);
+	const showingResult = useSelector(state => state.home.receiver.showingResult);
+	const currentValue = useSelector(state => state.home.currentValue);
 	return (
 		<DisplayWrapper>
-			<Result>{result}</Result>
+			<Result>{showingResult ? result : currentValue}</Result>
 		</DisplayWrapper>
 	);
 };

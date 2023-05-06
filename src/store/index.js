@@ -6,7 +6,9 @@ const store = configureStore({
 	reducer: {
 		themes: themesReducer,
 		home: homeReducer,
-	}
+	},
+	middleware: (getDefaultMiddleware) =>
+		getDefaultMiddleware({ serializableCheck: false }),
 });
 
 export default store;

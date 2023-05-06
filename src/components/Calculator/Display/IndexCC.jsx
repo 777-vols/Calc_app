@@ -4,10 +4,10 @@ import { DisplayWrapper, Result } from "./styled";
 
 class Display extends React.Component {
 	render() {
-		const { result } = this.props;
+		const { result, showingResult, currentValue } = this.props;
 		return (
 			<DisplayWrapper>
-				<Result>{result}</Result>
+				<Result>{showingResult ? result : currentValue}</Result>
 			</DisplayWrapper>
 		);
 	}
@@ -15,5 +15,7 @@ class Display extends React.Component {
 
 const mapStateToProps = (state) => ({
 	result: state.home.currentValue,
+	showingResult: state.home.receiver.showingResult,
+	currentValue: state.home.currentValue,
 });
 export default connect(mapStateToProps)(Display);

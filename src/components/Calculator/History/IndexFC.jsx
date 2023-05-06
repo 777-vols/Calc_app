@@ -1,8 +1,12 @@
+import { useSelector } from "react-redux";
 import ErrorButton from "../../ErrorButton/Index";
 import { HistoryWrapper, HistoryHeaderWrapper, HistoryHeader, HistoryResults } from "./styled";
 import HistoryItem from "./HistoryItem/IndexFC";
 
 const History = () => {
+	const historyList = useSelector(state => state.home.history);
+	console.log(historyList);
+	const history = [...historyList].reverse().map((el) => <HistoryItem key={el.id} result={el.expression} />);
 	return (
 		<HistoryWrapper>
 			<HistoryHeaderWrapper>
@@ -10,31 +14,7 @@ const History = () => {
 			</HistoryHeaderWrapper>
 			<HistoryResults>
 				<ErrorButton />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
-				<HistoryItem result={"10 * 2 / 4 = 5"} />
+				{history}
 			</HistoryResults>
 		</HistoryWrapper>
 	);
