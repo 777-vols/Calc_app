@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { HistoryItemWrapper, HistoryItemResult } from "./styled";
 
 class HistoryItem extends React.Component {
@@ -11,5 +12,9 @@ class HistoryItem extends React.Component {
 		);
 	}
 }
+
+History.propTypes = {
+	result: PropTypes.string,
+};
 
 export default HistoryItem;

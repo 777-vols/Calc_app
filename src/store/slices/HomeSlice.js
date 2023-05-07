@@ -23,12 +23,18 @@ const homeSlice = createSlice({
 			if (action.payload === ".") {
 				if (!state.currentValue.includes(".")) {
 					state.currentValue += action.payload;
-					state.expression += action.payload;
 				}
-			} else {
-				state.currentValue += action.payload;
-				state.expression += action.payload;
 			}
+			else {
+				if (state.currentOperator === "home/equal") {
+					state.currentOperator = "";
+					state.historyItem = "";
+					state.currentResult = "";
+					state.currentValue = "";
+				}
+				state.currentValue += action.payload;
+			}
+			state.historyItem += action.payload;
 		},
 		plus(state, action) {
 			let command;
@@ -36,6 +42,7 @@ const homeSlice = createSlice({
 				state.historyItem += " + ";
 				state.currentResult = "";
 				state.currentValue = "";
+				state.receiver.showingResult = false;
 				state.currentOperator = action.type;
 			}
 			else {
@@ -47,7 +54,7 @@ const homeSlice = createSlice({
 				}
 				state.receiver.addCommand(command);
 
-				state.historyItem += state.currentValue + " + ";
+				state.historyItem += " + ";
 				state.currentValue = "";
 				state.currentOperator = action.type;
 			}
@@ -58,6 +65,7 @@ const homeSlice = createSlice({
 				state.historyItem += " - ";
 				state.currentResult = "";
 				state.currentValue = "";
+				state.receiver.showingResult = false;
 				state.currentOperator = action.type;
 			}
 			else {
@@ -69,7 +77,7 @@ const homeSlice = createSlice({
 				}
 				state.receiver.addCommand(command);
 
-				state.historyItem += state.currentValue + " - ";
+				state.historyItem += " - ";
 				state.currentValue = "";
 				state.currentOperator = action.type;
 			}
@@ -80,6 +88,7 @@ const homeSlice = createSlice({
 				state.historyItem += " / ";
 				state.currentResult = "";
 				state.currentValue = "";
+				state.receiver.showingResult = false;
 				state.currentOperator = action.type;
 			}
 			else {
@@ -91,17 +100,19 @@ const homeSlice = createSlice({
 				}
 				state.receiver.addCommand(command);
 
-				state.historyItem += state.currentValue + " / ";
+				state.historyItem += " / ";
 				state.currentValue = "";
 				state.currentOperator = action.type;
 			}
 		},
+		divWithRemainder(state, action) { },
 		multiply(state, action) {
 			let command;
 			if (state.currentOperator === "home/equal") {
 				state.historyItem += " * ";
 				state.currentResult = "";
 				state.currentValue = "";
+				state.receiver.showingResult = false;
 				state.currentOperator = action.type;
 			}
 			else {
@@ -113,13 +124,12 @@ const homeSlice = createSlice({
 				}
 				state.receiver.addCommand(command);
 
-				state.historyItem += state.currentValue + " * ";
+				state.historyItem += " * ";
 				state.currentValue = "";
 				state.currentOperator = action.type;
 			}
 		},
 		equal(state, action) {
-			// console.log(action);
 			if (state.currentOperator === "home/plus")
 				state.receiver.addCommand(new PlusCommand(+state.currentValue));
 			if (state.currentOperator === "home/minus")
@@ -132,16 +142,29 @@ const homeSlice = createSlice({
 			state.currentOperator = action.type;
 			state.currentResult = state.receiver.execute();
 
-			state.historyItem += state.currentValue + " = " + state.currentResult;
+			state.historyItem += " = " + state.currentResult;
 			const obj = { id: state.history.length, expression: state.historyItem };
 			state.history.push(obj);
 			state.historyItem = state.currentResult;
 		},
-		clearValue(state, action) { },
-		clearAll(state, action) { },
 		leftBracket(state, action) { },
 		rightBracket(state, action) { },
-		divWithRemainder(state, action) { },
+		clearExpression(state, action) {
+			state.currentValue = "";
+			state.nowOperator = "";
+			state.currentResult = "";
+			state.historyItem = "";
+		},
+		clearAll(state, action) {
+			state.currentValue = "";
+			state.nowOperator = "";
+			state.currentResult = "";
+			state.historyItem = "";
+			state.history = [];
+		},
+		clearHistory(state, action) {
+			state.history = [];
+		},
 	}
 });
 
@@ -152,8 +175,9 @@ export const {
 	divide,
 	multiply,
 	equal,
-	clearValue,
+	clearExpression,
 	clearAll,
+	clearHistory,
 	leftBracket,
 	rightBracket,
 	divWithRemainder

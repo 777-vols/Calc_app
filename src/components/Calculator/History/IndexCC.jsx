@@ -1,44 +1,32 @@
+import PropTypes from "prop-types";
 import React from "react";
-import { HistoryWrapper, HistoryHeaderWrapper, HistoryHeader, HistoryResults } from "./styled";
+import { connect } from "react-redux";
 import HistoryItem from "./HistoryItem/IndexCC";
+import { HistoryWrapper, HistoryHeaderWrapper, HistoryHeader, HistoryResults } from "./styled";
 
 class History extends React.Component {
 	render() {
+		const { historyList } = this.props;
+		const history = [...historyList].reverse().map((el) => <HistoryItem key={el.id} result={el.expression} />);
 		return (
 			<HistoryWrapper>
 				<HistoryHeaderWrapper>
 					<HistoryHeader>History</HistoryHeader>
 				</HistoryHeaderWrapper>
 				<HistoryResults>
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
-					<HistoryItem result={"10 * 2 / 4 = 5"} />
+					{history}
 				</HistoryResults>
 			</HistoryWrapper>
 		);
 	}
 }
 
-export default History;
+History.propTypes = {
+	historyList: PropTypes.array,
+};
+
+const mapStateToProps = (state) => ({
+	historyList: state.home.history,
+});
+
+export default connect(mapStateToProps)(History);

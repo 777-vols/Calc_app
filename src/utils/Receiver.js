@@ -11,7 +11,6 @@ export const Receiver = class {
 			this.result = this.commandList[i].execute(this.result);
 		}
 		if (String(this.result).split(".").length > 1) {
-			console.log(this.result);
 			this.result = this.result.toFixed(3);
 			return this.result;
 		}

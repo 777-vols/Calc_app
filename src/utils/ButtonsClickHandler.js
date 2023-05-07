@@ -5,8 +5,9 @@ import {
 	divide,
 	multiply,
 	equal,
-	clearValue,
+	clearExpression,
 	clearAll,
+	clearHistory,
 	leftBracket,
 	rightBracket,
 	divWithRemainder
@@ -32,10 +33,13 @@ const ButtonsClickHandler = (dispatch, buttonValue) => {
 		dispatch(equal());
 	}
 	if (buttonValue === "C") {
-		dispatch(clearValue());
+		dispatch(clearExpression());
 	}
 	if (buttonValue === "CE") {
 		dispatch(clearAll());
+	}
+	if (buttonValue === "CH") {
+		dispatch(clearHistory());
 	}
 	if (buttonValue === "(") {
 		dispatch(leftBracket());
