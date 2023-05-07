@@ -5,6 +5,7 @@ import { PlusCommand } from "@utils/PlusCommand";
 import { MinusCommand } from "@utils/MinusCommand";
 import { MultiplyCommand } from "@utils/MultiplyCommand";
 import { DivideCommand } from "@utils/DivideCommand";
+import { DivWithRemCommand } from "@utils/DivWithRemCommand";
 
 const homeSlice = createSlice({
 	name: "home",
@@ -26,7 +27,7 @@ const homeSlice = createSlice({
 				}
 			}
 			else {
-				if (state.currentOperator === "home/equal") {
+				if (state.currentOperator === "home/equal" && !state.currentValue.includes(".")) {
 					state.currentOperator = "";
 					state.historyItem = "";
 					state.currentResult = "";
@@ -105,7 +106,29 @@ const homeSlice = createSlice({
 				state.currentOperator = action.type;
 			}
 		},
-		divWithRemainder(state, action) { },
+		divWithRemainder(state, action) {
+			let command;
+			if (state.currentOperator === "home/equal") {
+				state.historyItem += " % ";
+				state.currentResult = "";
+				state.currentValue = "";
+				state.receiver.showingResult = false;
+				state.currentOperator = action.type;
+			}
+			else {
+				if (state.currentOperator === "") {
+					command = new FirstValue(+state.currentValue);
+				}
+				else {
+					command = new DivWithRemCommand(+state.currentValue);
+				}
+				state.receiver.addCommand(command);
+
+				state.historyItem += " % ";
+				state.currentValue = "";
+				state.currentOperator = action.type;
+			}
+		},
 		multiply(state, action) {
 			let command;
 			if (state.currentOperator === "home/equal") {
@@ -136,6 +159,8 @@ const homeSlice = createSlice({
 				state.receiver.addCommand(new MinusCommand(+state.currentValue));
 			if (state.currentOperator === "home/divide")
 				state.receiver.addCommand(new DivideCommand(+state.currentValue));
+			if (state.currentOperator === "home/divWithRemainder")
+				state.receiver.addCommand(new DivWithRemCommand(+state.currentValue));
 			if (state.currentOperator === "home/multiply")
 				state.receiver.addCommand(new MultiplyCommand(+state.currentValue));
 			state.receiver.showingResult = true;

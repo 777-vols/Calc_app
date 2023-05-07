@@ -1,6 +1,5 @@
 export const FirstValue = class {
 	constructor(value) {
-		// console.log(value);
 		this.value = value;
 	}
 

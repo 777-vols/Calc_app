@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { toggleTheme } from "@store/slices/ThemesSlice";
 import { Container } from "@components/Header/styled";
+import ButtonsClickHandler from "../../utils/ButtonsClickHandler";
 import { SettingsWrapper, SettingsHeader, SettingsPanel, SettingsSelector, SelecorHeader, ClearButton } from "./styled";
 
 const Settings = () => {
@@ -8,6 +9,9 @@ const Settings = () => {
 	const toggleThemeFoo = () => {
 		const select = document.getElementById("themeSelect");
 		dispatch(toggleTheme({ newTheme: select.value }));
+	};
+	const clearHistory = () => {
+		ButtonsClickHandler(dispatch, "CH");
 	};
 
 	return (
@@ -25,7 +29,7 @@ const Settings = () => {
 							</SettingsSelector>
 						</div>
 						<div>
-							<ClearButton>Clear All History</ClearButton>
+							<ClearButton onClick={clearHistory}>Clear All History</ClearButton>
 						</div>
 					</SettingsPanel>
 				</SettingsWrapper>
