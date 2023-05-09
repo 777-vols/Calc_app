@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Receiver } from "@utils/Receiver";
-import { FirstValue } from "@utils/FirstValue";
 import { PlusCommand } from "@utils/PlusCommand";
 import { MinusCommand } from "@utils/MinusCommand";
 import { MultiplyCommand } from "@utils/MultiplyCommand";
 import { DivideCommand } from "@utils/DivideCommand";
 import { DivWithRemCommand } from "@utils/DivWithRemCommand";
+import operatorCheck from "@utils/OperatorCheck";
 
 const homeSlice = createSlice({
 	name: "home",
@@ -32,13 +32,13 @@ const homeSlice = createSlice({
 					state.historyItem = "";
 					state.currentResult = "";
 					state.currentValue = "";
+					state.receiver.result = 0;
 				}
 				state.currentValue += action.payload;
 			}
 			state.historyItem += action.payload;
 		},
 		plus(state, action) {
-			let command;
 			if (state.currentOperator === "home/equal") {
 				state.historyItem += " + ";
 				state.currentResult = "";
@@ -47,21 +47,13 @@ const homeSlice = createSlice({
 				state.currentOperator = action.type;
 			}
 			else {
-				if (state.currentOperator === "") {
-					command = new FirstValue(+state.currentValue);
-				}
-				else {
-					command = new PlusCommand(+state.currentValue);
-				}
-				state.receiver.addCommand(command);
-
+				operatorCheck(state, PlusCommand);
 				state.historyItem += " + ";
 				state.currentValue = "";
 				state.currentOperator = action.type;
 			}
 		},
 		minus(state, action) {
-			let command;
 			if (state.currentOperator === "home/equal") {
 				state.historyItem += " - ";
 				state.currentResult = "";
@@ -70,21 +62,13 @@ const homeSlice = createSlice({
 				state.currentOperator = action.type;
 			}
 			else {
-				if (state.currentOperator === "") {
-					command = new FirstValue(+state.currentValue);
-				}
-				else {
-					command = new MinusCommand(+state.currentValue);
-				}
-				state.receiver.addCommand(command);
-
+				operatorCheck(state, MinusCommand);
 				state.historyItem += " - ";
 				state.currentValue = "";
 				state.currentOperator = action.type;
 			}
 		},
 		divide(state, action) {
-			let command;
 			if (state.currentOperator === "home/equal") {
 				state.historyItem += " / ";
 				state.currentResult = "";
@@ -93,21 +77,13 @@ const homeSlice = createSlice({
 				state.currentOperator = action.type;
 			}
 			else {
-				if (state.currentOperator === "") {
-					command = new FirstValue(+state.currentValue);
-				}
-				else {
-					command = new DivideCommand(+state.currentValue);
-				}
-				state.receiver.addCommand(command);
-
+				operatorCheck(state, DivideCommand);
 				state.historyItem += " / ";
 				state.currentValue = "";
 				state.currentOperator = action.type;
 			}
 		},
 		divWithRemainder(state, action) {
-			let command;
 			if (state.currentOperator === "home/equal") {
 				state.historyItem += " % ";
 				state.currentResult = "";
@@ -116,21 +92,13 @@ const homeSlice = createSlice({
 				state.currentOperator = action.type;
 			}
 			else {
-				if (state.currentOperator === "") {
-					command = new FirstValue(+state.currentValue);
-				}
-				else {
-					command = new DivWithRemCommand(+state.currentValue);
-				}
-				state.receiver.addCommand(command);
-
+				operatorCheck(state, DivWithRemCommand);
 				state.historyItem += " % ";
 				state.currentValue = "";
 				state.currentOperator = action.type;
 			}
 		},
 		multiply(state, action) {
-			let command;
 			if (state.currentOperator === "home/equal") {
 				state.historyItem += " * ";
 				state.currentResult = "";
@@ -139,14 +107,7 @@ const homeSlice = createSlice({
 				state.currentOperator = action.type;
 			}
 			else {
-				if (state.currentOperator === "") {
-					command = new FirstValue(+state.currentValue);
-				}
-				else {
-					command = new MultiplyCommand(+state.currentValue);
-				}
-				state.receiver.addCommand(command);
-
+				operatorCheck(state, MultiplyCommand);
 				state.historyItem += " * ";
 				state.currentValue = "";
 				state.currentOperator = action.type;
@@ -163,6 +124,7 @@ const homeSlice = createSlice({
 				state.receiver.addCommand(new DivWithRemCommand(+state.currentValue));
 			if (state.currentOperator === "home/multiply")
 				state.receiver.addCommand(new MultiplyCommand(+state.currentValue));
+
 			state.receiver.showingResult = true;
 			state.currentOperator = action.type;
 			state.currentResult = state.receiver.execute();
