@@ -1,31 +1,36 @@
+import RightPolishNotation from "./RPN modules/RPN";
+import PolishDecoder from "./RPN modules/PolishDecoder";
+import ExpressionCorrector from "./RPN modules/ExpressionCorrector";
+
 export const Receiver = class {
 	constructor() {
 		this.showingResult = false;
-		this.commandList = [];
-		this.counter = 0;
-		this.result = 0;
+		this.commandsList = [];
+		this.polishArray = [];
+		this.leftBracketsCounter = 0;
+		this.rightBracketsCounter = 0;
+		this.finalCommands = [];
+	}
+
+	bracketsFix() {
+		if (this.leftBracketsCounter > this.rightBracketsCounter) {
+			for (let i = 0; i < this.leftBracketsCounter - this.rightBracketsCounter; i++) {
+				this.polishArray.push(")");
+			}
+		}
+		this.leftBracketsCounter = 0;
+		this.rightBracketsCounter = 0;
 	}
 
 	execute() {
-		for (let i = 0; i < this.counter; i++) {
-			console.log(this.counter);
-			console.log(this.commandList);
-			console.log(this.commandList[i].execute(this.result));
-			this.result = this.commandList[i].execute(this.result);
-		}
-		if (String(this.result).split(".").length > 1) {
-			this.result = this.result.toFixed(3);
-			return this.result;
-		}
-		console.log(this.result);
-		this.commandList = [];
-		this.counter = 0;
-		return this.result;
-	}
+		this.polishArray = ExpressionCorrector(this.polishArray);
+		this.polishArray = RightPolishNotation(this.polishArray);
+		const result = PolishDecoder(this.polishArray);
 
-	addCommand(command) {
-		console.log(command);
-		this.commandList.push(command);
-		this.counter += 1;
+		this.commandsList = [];
+		this.polishArray = [];
+
+		this.polishArray.push(String(result));
+		return result;
 	}
 };

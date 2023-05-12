@@ -1,13 +1,10 @@
 export const MultiplyCommand = class {
-	constructor(value) {
-		this.value = value;
+	constructor(val1, val2) {
+		this.val1 = +val1;
+		this.val2 = +val2;
 	}
 
 	execute(result) {
-		if (!result) {
-			return this.value;
-		}
-		result = result * this.value;
-		return result;
+		return this.val1 * this.val2;
 	}
 };
