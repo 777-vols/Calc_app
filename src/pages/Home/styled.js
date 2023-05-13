@@ -12,13 +12,13 @@ export const CalculatorWrapper = styled.div`
 	grid-template-columns: 5fr 1fr;
 	grid-gap: 15px;
 
-	@media (max-width: 500px) {
+	@media (max-width: 600px) {
 		grid-template-areas:
 		"s"
 		"k"
 		"h";
 
-		grid-template-rows: 10fr 40fr auto;
+		grid-template-rows: 1fr 10fr 12fr;
 		grid-template-columns: 1fr;
 		grid-gap: 10px;
 	}

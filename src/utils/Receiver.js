@@ -4,7 +4,6 @@ import ExpressionCorrector from "./RPN modules/ExpressionCorrector";
 
 export const Receiver = class {
 	constructor() {
-		this.showingResult = false;
 		this.commandsList = [];
 		this.polishArray = [];
 		this.leftBracketsCounter = 0;

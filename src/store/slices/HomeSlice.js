@@ -6,29 +6,27 @@ const homeSlice = createSlice({
 	initialState: {
 		currentValue: "",
 		currentOperator: "",
-		currentResult: "",
+		expressionResult: "",
 		history: [],
 		historyItem: "",
+		showingResult: false,
 		receiver: new Receiver(),
 	},
 	reducers: {
 		inputValue(state, action) {
-			state.receiver.showingResult = false;
-
+			state.showingResult = false;
+			if (state.currentOperator === "home/equal" && !state.currentValue.includes(".")) {
+				state.currentOperator = "";
+				state.historyItem = "";
+				state.expressionResult = "";
+				state.currentValue = "";
+				state.receiver.polishArray = [];
+			}
 			if (action.payload === ".") {
 				if (!state.currentValue.includes(".")) {
 					state.currentValue += action.payload;
 				}
-			}
-			else {
-				if (state.currentOperator === "home/equal" && !state.currentValue.includes(".")) {
-					state.currentOperator = "";
-					state.historyItem = "";
-					state.currentResult = "";
-					state.currentValue = "";
-					state.receiver.result = 0;
-					state.receiver.polishArray = [];
-				}
+			} else {
 				state.currentValue += action.payload;
 			}
 			state.historyItem += action.payload;
@@ -37,9 +35,9 @@ const homeSlice = createSlice({
 			if (state.currentOperator === "home/equal") {
 				state.historyItem += " + ";
 				state.receiver.polishArray.push("+");
-				state.currentResult = "";
+				state.expressionResult = "";
 				state.currentValue = "";
-				state.receiver.showingResult = false;
+				state.showingResult = false;
 				state.currentOperator = action.type;
 			}
 			else {
@@ -54,9 +52,9 @@ const homeSlice = createSlice({
 			if (state.currentOperator === "home/equal") {
 				state.historyItem += " - ";
 				state.receiver.polishArray.push("-");
-				state.currentResult = "";
+				state.expressionResult = "";
 				state.currentValue = "";
-				state.receiver.showingResult = false;
+				state.showingResult = false;
 				state.currentOperator = action.type;
 			}
 			else {
@@ -71,9 +69,9 @@ const homeSlice = createSlice({
 			if (state.currentOperator === "home/equal") {
 				state.historyItem += " / ";
 				state.receiver.polishArray.push("/");
-				state.currentResult = "";
+				state.expressionResult = "";
 				state.currentValue = "";
-				state.receiver.showingResult = false;
+				state.showingResult = false;
 				state.currentOperator = action.type;
 			}
 			else {
@@ -88,9 +86,9 @@ const homeSlice = createSlice({
 			if (state.currentOperator === "home/equal") {
 				state.historyItem += " % ";
 				state.receiver.polishArray.push("%");
-				state.currentResult = "";
+				state.expressionResult = "";
 				state.currentValue = "";
-				state.receiver.showingResult = false;
+				state.showingResult = false;
 				state.currentOperator = action.type;
 			}
 			else {
@@ -105,9 +103,9 @@ const homeSlice = createSlice({
 			if (state.currentOperator === "home/equal") {
 				state.historyItem += " * ";
 				state.receiver.polishArray.push("*");
-				state.currentResult = "";
+				state.expressionResult = "";
 				state.currentValue = "";
-				state.receiver.showingResult = false;
+				state.showingResult = false;
 				state.currentOperator = action.type;
 			}
 			else {
@@ -119,20 +117,26 @@ const homeSlice = createSlice({
 			}
 		},
 		equal(state, action) {
-			state.receiver.showingResult = true;
+			state.showingResult = true;
 			state.currentOperator = action.type;
 
 			state.receiver.polishArray.push(state.currentValue);
 			state.receiver.bracketsFix();
 			state.historyItem = state.receiver.polishArray.join("");
-			state.currentResult = state.receiver.execute();
+			state.expressionResult = state.receiver.execute();
 
-			state.historyItem += " = " + state.currentResult;
+			state.historyItem += " = " + state.expressionResult;
 			const obj = { id: state.history.length, expression: state.historyItem };
 			state.history.push(obj);
-			state.historyItem = state.currentResult;
+			state.historyItem = state.expressionResult;
 		},
 		leftBracket(state, action) {
+			if (state.currentOperator === "home/equal") {
+				state.expressionResult = "";
+				state.currentValue = "";
+				state.showingResult = false;
+				state.currentOperator = action.type;
+			}
 			if (state.currentValue)
 				state.receiver.polishArray.push(state.currentValue);
 			state.receiver.leftBracketsCounter++;
@@ -141,6 +145,12 @@ const homeSlice = createSlice({
 			state.currentValue = "";
 		},
 		rightBracket(state, action) {
+			if (state.currentOperator === "home/equal") {
+				state.expressionResult = "";
+				state.currentValue = "";
+				state.showingResult = false;
+				state.currentOperator = action.type;
+			}
 			if (state.currentValue)
 				state.receiver.polishArray.push(state.currentValue);
 			state.receiver.rightBracketsCounter++;
@@ -151,14 +161,14 @@ const homeSlice = createSlice({
 		clearExpression(state, action) {
 			state.currentValue = "";
 			state.nowOperator = "";
-			state.currentResult = "";
+			state.expressionResult = "";
 			state.receiver.polishArray = [];
 			state.historyItem = "";
 		},
 		clearAll(state, action) {
 			state.currentValue = "";
 			state.nowOperator = "";
-			state.currentResult = "";
+			state.expressionResult = "";
 			state.receiver.polishArray = [];
 			state.historyItem = "";
 			state.history = [];

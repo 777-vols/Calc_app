@@ -1,11 +1,12 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "@store/slices/ThemesSlice";
 import { Container } from "@components/Header/styled";
-import ButtonsClickHandler from "../../utils/ButtonsClickHandler";
+import ButtonsClickHandler from "@utils/ButtonsClickHandler";
 import { SettingsWrapper, SettingsHeader, SettingsPanel, SettingsSelector, SelecorHeader, ClearButton } from "./styled";
 
 const Settings = () => {
 	const dispatch = useDispatch();
+	const theme = useSelector(state => state.themes.themeName);
 	const toggleThemeFoo = () => {
 		const select = document.getElementById("themeSelect");
 		dispatch(toggleTheme({ newTheme: select.value }));
@@ -22,7 +23,7 @@ const Settings = () => {
 					<SettingsPanel>
 						<SelecorHeader> Switch Theme</SelecorHeader>
 						<div>
-							<SettingsSelector id="themeSelect" onChange={toggleThemeFoo}>
+							<SettingsSelector value={theme} id="themeSelect" onChange={toggleThemeFoo}>
 								<option value="light">Light Theme</option>
 								<option value="colored">Colored Theme</option>
 								<option value="dark">Dark Theme</option>

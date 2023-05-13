@@ -6,6 +6,9 @@ export const ButtonWrapper = styled.div`
 	justify-content: center;
 	align-items: center;
 `;
+export const DivButtonContainer = styled.div`
+	position: relative;
+`;
 export const Button = styled.button`
 	width: 105px;
 	height: 105px;
@@ -26,8 +29,8 @@ export const Button = styled.button`
 		font-size: 30px;
 	}
 	@media (max-width: 500px) {
-		max-width: 45px;
-		max-height: 45px;
+		max-width: 50px;
+		max-height: 50px;
 		font-size: 22px;
 		border-radius: 15px;
 	}

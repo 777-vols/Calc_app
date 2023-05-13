@@ -7,7 +7,10 @@ export const HistoryWrapper = styled.div`
 	border-left: 2px solid ${props => props.theme.color};
 	min-width: 20vw;
 
-	@media (max-width: 500px) {
+	@media (max-width: 1000px) {
+		min-width: 25vw;
+	}
+	@media (max-width: 600px) {
 		border-left: none;
 		border-top: 2px solid ${props => props.theme.color};
 	}

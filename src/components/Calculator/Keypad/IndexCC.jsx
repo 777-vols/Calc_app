@@ -10,6 +10,7 @@ class Keypad extends React.Component {
 		ButtonsClickHandler(this.props.dispatch, value);
 	};
 	buttonsList = buttons.map((el, i) => <ButtonComponent key={i} value={el} func={this.buttonClick} />);
+
 	render() {
 		return (
 			<KeypadWrapper>

@@ -7,6 +7,9 @@ export const StyledHeader = styled.header`
 export const Container = styled.div`
 	max-width: 100%;
 	padding: 15px;
+	@media (max-width: 500px) {
+		padding: 10px;
+	}
 `;
 export const HeaderInner = styled.div`
 	min-height: 40px;
@@ -22,8 +25,8 @@ export const MenuList = styled.ul`
 export const LinkWrapper = styled.div`
 	padding: 0 20px 0 20px;
 
-	@media (max-width: 600px) {
-   	padding: 0 7px 0 7px;
+	@media (max-width: 500px) {
+   	padding: 0 6px 0 6px;
 	}
 `;
 export const LogoLink = styled(NavLink)`
@@ -33,8 +36,8 @@ export const LogoLink = styled(NavLink)`
 	color: #fef6f6;
 	white-space: nowrap;
 
-	@media (max-width: 600px) {
-   	font-size: 16px;
+	@media (max-width: 500px) {
+   	font-size: 15px;
 	}
 `;
 export const MenuLink = styled(NavLink)`
@@ -63,8 +66,8 @@ export const MenuLink = styled(NavLink)`
 		}
 	}
 
-	@media (max-width: 600px) {
-   	font-size: 15px;
+	@media (max-width: 500px) {
+   	font-size: 13px;
 	}
 
 	@media (max-width: 375px) {

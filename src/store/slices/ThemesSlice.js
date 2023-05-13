@@ -4,6 +4,7 @@ import colors from "@constants/themesColors";
 const themesSlice = createSlice({
 	name: "themes",
 	initialState: {
+		themeName: "light",
 		currentTheme: {
 			background: "white",
 			color: "black",
@@ -12,6 +13,7 @@ const themesSlice = createSlice({
 	},
 	reducers: {
 		toggleTheme(state, action) {
+			state.themeName = action.payload.newTheme;
 			state.currentTheme = colors[action.payload.newTheme];
 		}
 	}

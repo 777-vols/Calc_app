@@ -21,8 +21,8 @@ History.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-	result: state.home.currentResult,
-	showingResult: state.home.receiver.showingResult,
+	result: state.home.expressionResult,
+	showingResult: state.home.showingResult,
 	expression: state.home.historyItem,
 });
 
