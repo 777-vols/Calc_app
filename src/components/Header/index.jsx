@@ -7,28 +7,28 @@ const Header = () => {
 			<Container>
 				<HeaderInner>
 					<LinkWrapper>
-						<LogoLink to="/">Calculator App</LogoLink>
+						<LogoLink link_test="logo" to="/">Calculator App</LogoLink>
 					</LinkWrapper>
 
 					<nav>
 						<MenuList>
 							<li>
 								<LinkWrapper>
-									<MenuLink to="/">
+									<MenuLink link_test="home_fc" to="/">
 										Home FC
 									</MenuLink>
 								</LinkWrapper>
 							</li>
 							<li>
 								<LinkWrapper>
-									<MenuLink to="/homeCC">
+									<MenuLink link_test="home_cc" to="/homeCC">
 										Home CC
 									</MenuLink>
 								</LinkWrapper>
 							</li>
 							<li>
 								<LinkWrapper>
-									<MenuLink to="/settings">
+									<MenuLink link_test="settings" to="/settings">
 										Settings
 									</MenuLink>
 								</LinkWrapper>
