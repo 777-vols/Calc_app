@@ -40,9 +40,10 @@ const homeSlice = createSlice({
 				state.showingResult = false;
 				state.currentOperator = action.type;
 			}
-			if (state.currentValue && state.currentOperator !== "home/plus") {
+			if (state.currentValue || state.currentOperator === "home/rightBracket") {
+				if (state.currentValue)
+					state.receiver.polishArray.push(state.currentValue);
 				state.historyItem += " + ";
-				state.receiver.polishArray.push(state.currentValue);
 				state.receiver.polishArray.push("+");
 				state.currentValue = "";
 				state.currentOperator = action.type;
@@ -58,8 +59,9 @@ const homeSlice = createSlice({
 				state.currentOperator = action.type;
 			}
 			if (state.currentOperator !== "home/minus") {
+				if (state.currentValue)
+					state.receiver.polishArray.push(state.currentValue);
 				state.historyItem += " - ";
-				state.receiver.polishArray.push(state.currentValue);
 				state.receiver.polishArray.push("-");
 				state.currentValue = "";
 				state.currentOperator = action.type;
@@ -74,9 +76,10 @@ const homeSlice = createSlice({
 				state.showingResult = false;
 				state.currentOperator = action.type;
 			}
-			if (state.currentValue && state.currentOperator !== "home/divide") {
+			if (state.currentValue || state.currentOperator === "home/rightBracket") {
+				if (state.currentValue)
+					state.receiver.polishArray.push(state.currentValue);
 				state.historyItem += " / ";
-				state.receiver.polishArray.push(state.currentValue);
 				state.receiver.polishArray.push("/");
 				state.currentValue = "";
 				state.currentOperator = action.type;
@@ -91,9 +94,10 @@ const homeSlice = createSlice({
 				state.showingResult = false;
 				state.currentOperator = action.type;
 			}
-			if (state.currentValue && state.currentOperator !== "home/divWithRemainder") {
+			if (state.currentValue || state.currentOperator === "home/rightBracket") {
+				if (state.currentValue)
+					state.receiver.polishArray.push(state.currentValue);
 				state.historyItem += " % ";
-				state.receiver.polishArray.push(state.currentValue);
 				state.receiver.polishArray.push("%");
 				state.currentValue = "";
 				state.currentOperator = action.type;
@@ -108,9 +112,10 @@ const homeSlice = createSlice({
 				state.showingResult = false;
 				state.currentOperator = action.type;
 			}
-			if (state.currentValue && state.currentOperator !== "home/multiply") {
+			if (state.currentValue || state.currentOperator === "home/rightBracket") {
+				if (state.currentValue)
+					state.receiver.polishArray.push(state.currentValue);
 				state.historyItem += " * ";
-				state.receiver.polishArray.push(state.currentValue);
 				state.receiver.polishArray.push("*");
 				state.currentValue = "";
 				state.currentOperator = action.type;
@@ -131,22 +136,24 @@ const homeSlice = createSlice({
 			state.historyItem = state.expressionResult;
 		},
 		leftBracket(state, action) {
+			state.showingResult = false;
 			if (state.currentOperator === "home/equal") {
 				state.expressionResult = "";
 				state.currentValue = "";
-				state.showingResult = false;
-				state.currentOperator = action.type;
 			}
 			if (state.currentValue)
 				state.receiver.polishArray.push(state.currentValue);
+			state.currentOperator = action.type;
 			state.receiver.leftBracketsCounter++;
 			state.receiver.polishArray.push("(");
 			state.historyItem += "(";
 			state.currentValue = "";
 		},
 		rightBracket(state, action) {
-			if (state.currentValue && state.receiver.leftBracketsCounter > 0) {
+			if (state.currentValue)
 				state.receiver.polishArray.push(state.currentValue);
+			if (state.receiver.rightBracketsCounter < state.receiver.leftBracketsCounter) {
+				state.currentOperator = action.type;
 				state.receiver.rightBracketsCounter++;
 				state.receiver.polishArray.push(")");
 				state.historyItem += ")";

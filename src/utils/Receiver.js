@@ -22,6 +22,7 @@ export const Receiver = class {
 	}
 
 	execute() {
+		console.log(this.polishArray);
 		this.polishArray = ExpressionCorrector(this.polishArray);
 		this.polishArray = RightPolishNotation(this.polishArray);
 		const result = PolishDecoder(this.polishArray);
