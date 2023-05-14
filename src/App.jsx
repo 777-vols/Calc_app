@@ -12,7 +12,7 @@ const App = () => {
 	const theme = useSelector(state => state.themes.currentTheme);
 	return (
 		<ThemeProvider theme={theme}>
-			<AppWrapper>
+			<AppWrapper id="wrapper">
 				<Header />
 				<Routes>
 					<Route path="/" element={<HomeFC />} />

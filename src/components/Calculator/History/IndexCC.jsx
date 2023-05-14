@@ -13,7 +13,7 @@ class History extends React.Component {
 				<HistoryHeaderWrapper>
 					<HistoryHeader>History</HistoryHeader>
 				</HistoryHeaderWrapper>
-				<HistoryResults>
+				<HistoryResults id="history">
 					{history}
 				</HistoryResults>
 			</HistoryWrapper>

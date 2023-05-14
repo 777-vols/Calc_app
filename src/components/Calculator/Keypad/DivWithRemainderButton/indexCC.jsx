@@ -7,7 +7,7 @@ class DivWithRemainderButton extends React.Component {
 		const { func } = this.props;
 		return (
 			<ButtonWrapper>
-				<Button onClick={() => func("%")}>%</Button>
+				<Button id={"%"} onClick={() => func("%")}>%</Button>
 			</ButtonWrapper>
 		);
 	}

@@ -58,7 +58,7 @@ const homeSlice = createSlice({
 				state.currentValue = "";
 				state.currentOperator = action.type;
 			}
-			if (state.currentOperator !== "home/minus") {
+			if (state.currentValue || state.currentOperator !== "home/minus") {
 				if (state.currentValue)
 					state.receiver.polishArray.push(state.currentValue);
 				state.historyItem += " - ";
@@ -122,10 +122,11 @@ const homeSlice = createSlice({
 			}
 		},
 		equal(state, action) {
+			if (state.currentValue)
+				state.receiver.polishArray.push(state.currentValue);
 			state.showingResult = true;
 			state.currentOperator = action.type;
 
-			state.receiver.polishArray.push(state.currentValue);
 			state.receiver.bracketsFix();
 			state.historyItem = state.receiver.polishArray.join("");
 			state.expressionResult = state.receiver.execute();

@@ -34,6 +34,7 @@ export const DisplayWrapper = styled.div`
 export const Result = styled.span`
 	max-width: 78vw;
 	font-size: 42px;
+	white-space: nowrap;
 
 	@media (max-width: 750px) {
 		font-size: 35px;

@@ -1,25 +1,38 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add("enterExpr", (expr) => {
+	expr.split("").forEach((el) => {
+		cy.get(`[id="${el}"]`).click();
+	});
+});
+
+Cypress.Commands.add("checkResult", (expr) => {
+	cy.enterExpr(expr.expression);
+	cy.get("#result").should("have.text", expr.result);
+	cy.get("[id='C']").click();
+});
+
+Cypress.Commands.add("checkCE", (hist) => {
+	hist.forEach((el) => {
+		cy.enterExpr(el.expression);
+		cy.get("#history").children().first().should("have.text", el.result);
+		cy.get("[id='C']").click();
+	});
+});
+
+Cypress.Commands.add("checkThemes", (themes, themesList) => {
+	console.log(themes);
+	themes.forEach(el => {
+		cy.get("select").select(el);
+		cy.get("#wrapper")
+			.should("have.css", "background-color", themesList[el].background)
+			.should("have.css", "color", themesList[el].color);
+	})
+});
+
+Cypress.Commands.add("checkHistory", (hist) => {
+	hist.forEach((el) => {
+		cy.enterExpr(el.expression);
+		cy.get("#history").children().first().should("have.text", el.result);
+		cy.get("[id='C']").click();
+	});
+});
+

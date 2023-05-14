@@ -10,7 +10,7 @@ class ButtonComponent extends React.Component {
 			return (
 				<ButtonWrapper>
 					<DivButtonContainer>
-						<Button onClick={() => func(value)}>
+						<Button id={value} onClick={() => func(value)}>
 							{value}
 						</Button>
 						<DivWithRemainderButton func={func} />
@@ -20,7 +20,7 @@ class ButtonComponent extends React.Component {
 		};
 		return (
 			<ButtonWrapper>
-				<Button onClick={() => func(value)}>
+				<Button id={value} onClick={() => func(value)}>
 					{value}
 				</Button>
 			</ButtonWrapper>

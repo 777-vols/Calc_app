@@ -7,17 +7,17 @@ const ButtonComponent = ({ value, func }) => {
 		return (
 			<ButtonWrapper>
 				<DivButtonContainer>
-					<Button onClick={() => func(value)}>
+					<Button id={value} onClick={() => func(value)}>
 						{value}
 					</Button>
 					<DivWithRemainderButton func={func} />
 				</DivButtonContainer>
-			</ButtonWrapper>
+			</ButtonWrapper >
 		);
 	};
 	return (
 		<ButtonWrapper>
-			<Button onClick={() => func(value)}>
+			<Button id={value} onClick={() => func(value)}>
 				{value}
 			</Button>
 		</ButtonWrapper>

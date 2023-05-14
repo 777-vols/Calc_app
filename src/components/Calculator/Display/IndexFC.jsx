@@ -7,7 +7,7 @@ const Display = () => {
 	const expression = useSelector(state => state.home.historyItem);
 	return (
 		<DisplayWrapper>
-			<Result>{showingResult ? result : expression}</Result>
+			<Result id="result">{showingResult ? result : expression}</Result>
 		</DisplayWrapper>
 	);
 };

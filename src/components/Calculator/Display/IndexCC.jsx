@@ -8,7 +8,7 @@ class Display extends React.Component {
 		const { result, showingResult, expression } = this.props;
 		return (
 			<DisplayWrapper>
-				<Result>{showingResult ? result : expression}</Result>
+				<Result id="result">{showingResult ? result : expression}</Result>
 			</DisplayWrapper>
 		);
 	}

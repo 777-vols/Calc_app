@@ -11,7 +11,7 @@ const History = () => {
 			<HistoryHeaderWrapper>
 				<HistoryHeader>History</HistoryHeader>
 			</HistoryHeaderWrapper>
-			<HistoryResults>
+			<HistoryResults id="history">
 				{/* <ErrorButton /> */}
 				{history}
 			</HistoryResults>

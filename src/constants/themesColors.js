@@ -1,17 +1,17 @@
 const colors = {
 	light: {
-		background: "white",
-		color: "black",
+		background: "rgb(255, 255, 255)",
+		color: "rgb(0, 0, 0)",
 		buttonBackground: "#f1f0f0"
 	},
 	dark: {
-		background: "rgb(94 94 94)",
-		color: "#f1f1f1",
+		background: "rgb(94, 94, 94)",
+		color: "rgb(241, 241, 241)",
 		buttonBackground: "rgb(52, 52, 52)"
 	},
 	colored: {
-		background: "rgb(174 140 191)",
-		color: "rgb(46 0 67)",
+		background: "rgb(174, 140, 191)",
+		color: "rgb(46, 0, 67)",
 		buttonBackground: "#d8bde5"
 	}
 };

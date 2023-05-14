@@ -4,7 +4,7 @@ import { ButtonWrapper, Button } from "./styled";
 const DivWithRemainderButton = ({ func }) => {
 	return (
 		<ButtonWrapper>
-			<Button onClick={() => func("%")}>%</Button>
+			<Button id={"%"} onClick={() => func("%")}>%</Button>
 		</ButtonWrapper>
 	);
 };
