@@ -5,7 +5,7 @@ export const CalculatorWrapper = styled.div`
 	height: 86.7vh;
 
 	grid-template-areas:
-		"s h"
+		"s p"
 		"k h";
 
 	grid-template-rows: 1fr 8fr;
@@ -16,9 +16,10 @@ export const CalculatorWrapper = styled.div`
 		grid-template-areas:
 		"s"
 		"k"
+		"p"
 		"h";
 
-		grid-template-rows: 1fr 10fr 12fr;
+		grid-template-rows: 1fr 8fr 1fr 7fr;
 		grid-template-columns: 1fr;
 		grid-gap: 10px;
 	}

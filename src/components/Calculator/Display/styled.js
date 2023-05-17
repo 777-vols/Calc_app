@@ -26,7 +26,7 @@ export const DisplayWrapper = styled.div`
 	@media (max-width: 750px) {
 		padding: 0px 20px;
 	}
-	@media (max-width: 500px) {
+	@media (max-width: 600px) {
 		padding: 0px 15px;
 		padding-bottom: 5px;
 	}
@@ -39,7 +39,7 @@ export const Result = styled.span`
 	@media (max-width: 750px) {
 		font-size: 35px;
 	}
-	@media (max-width: 500px) {
+	@media (max-width: 600px) {
 		font-size: 30px;
 	}
 `;

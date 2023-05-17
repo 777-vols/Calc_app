@@ -7,10 +7,7 @@ export const KeypadWrapper = styled.div`
 	grid-template-rows: repeat(4, 1fr);
 	border-top: 2px solid ${props => props.theme.color};
 
-	@media (max-width: 750px) {
-		min-height: 50vh
-	}
-	@media (max-width: 500px) {
-		min-height: 36vh
+	@media (max-width: 600px) {
+		border-bottom: 2px solid ${props => props.theme.color};
 	}
 `;

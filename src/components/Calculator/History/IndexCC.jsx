@@ -9,7 +9,7 @@ class History extends React.Component {
 		const { historyList } = this.props;
 		const history = [...historyList].reverse().map((el) => <HistoryItem key={el.id} result={el.expression} />);
 		return (
-			<HistoryWrapper>
+			<HistoryWrapper id="historyBlock">
 				<HistoryHeaderWrapper>
 					<HistoryHeader>History</HistoryHeader>
 				</HistoryHeaderWrapper>

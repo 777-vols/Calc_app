@@ -12,7 +12,7 @@ export const ButtonWrapper = styled.div`
 		bottom: 5px;
 		right: 5px;
 	}
-	@media (max-width: 500px) {
+	@media (max-width: 600px) {
 		bottom: 4px;
 		right: 4px;
 	}
@@ -36,7 +36,7 @@ export const Button = styled.button`
 		height: 25px;
 		font-size: 12px;
 	}
-	@media (max-width: 500px) {
+	@media (max-width: 600px) {
 		width: 21px;
 		height: 21px;
 		font-size: 10px;

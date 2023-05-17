@@ -28,7 +28,7 @@ export const Button = styled.button`
 		max-height: 70px;
 		font-size: 30px;
 	}
-	@media (max-width: 500px) {
+	@media (max-width: 600px) {
 		max-width: 50px;
 		max-height: 50px;
 		font-size: 22px;

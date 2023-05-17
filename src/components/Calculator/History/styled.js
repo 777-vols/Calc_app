@@ -6,13 +6,12 @@ export const HistoryWrapper = styled.div`
 	padding-left: 15px;
 	border-left: 2px solid ${props => props.theme.color};
 	min-width: 20vw;
-
+	
 	@media (max-width: 1000px) {
 		min-width: 25vw;
 	}
 	@media (max-width: 600px) {
 		border-left: none;
-		border-top: 2px solid ${props => props.theme.color};
 	}
 `;
 export const HistoryHeaderWrapper = styled.div`
@@ -29,10 +28,10 @@ export const HistoryResults = styled.div`
 	display: flex;
 	flex-direction: column;
 	overflow: auto;
-	max-height: 79vh;
+	max-height: 71vh;
 
-	@media (max-width: 500px) {
-		max-height: 35vh;
+	@media (max-width: 600px) {
+		max-height: 24vh;
 	}
 
 	::-webkit-scrollbar {
