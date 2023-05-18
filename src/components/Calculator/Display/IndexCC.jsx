@@ -1,29 +1,43 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { DisplayWrapper, Result } from "./styled";
+import { DisplayWrapper, ExprContainer, Expression, Value } from "./styled";
 
 class Display extends React.Component {
 	render() {
-		const { result, showingResult, expression } = this.props;
+		const { result, showingResult, historyItem, polishArray, oldValue, oldExpression, currentValue } = this.props;
 		return (
 			<DisplayWrapper>
-				<Result id="result">{showingResult ? result : expression}</Result>
+				<ExprContainer>
+					<Expression>{showingResult ? oldExpression :
+						currentValue ? polishArray : historyItem}</Expression>
+				</ExprContainer>
+				<ExprContainer>
+					<Value id="result">{showingResult ? result : currentValue ? currentValue : oldValue}</Value>
+				</ExprContainer>
 			</DisplayWrapper>
 		);
 	}
 }
 
 History.propTypes = {
-	result: PropTypes.string,
 	showingResult: PropTypes.bool,
-	expression: PropTypes.string,
+	historyItem: PropTypes.string,
+	polishArray: PropTypes.array,
+	oldExpression: PropTypes.string,
+	oldValue: PropTypes.string,
+	currentValue: PropTypes.string,
+	result: PropTypes.string,
 };
 
 const mapStateToProps = (state) => ({
-	result: state.home.expressionResult,
 	showingResult: state.home.showingResult,
-	expression: state.home.historyItem,
+	historyItem: state.home.historyItem,
+	polishArray: state.home.receiver.getPolishArray(),
+	oldExpression: state.home.oldExpression,
+	oldValue: state.home.oldValue,
+	currentValue: state.home.currentValue,
+	result: state.home.expressionResult,
 });
 
 export default connect(mapStateToProps)(Display);

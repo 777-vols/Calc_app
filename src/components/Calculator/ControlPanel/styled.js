@@ -11,7 +11,7 @@ export const ControlPanelWrapper = styled.div`
 	min-width: 20vw;
 	
 	@media (max-width: 1000px) {
-		min-width: 25vw;
+		min-width: 170px;
 	}
 
 	@media (max-width: 600px) {

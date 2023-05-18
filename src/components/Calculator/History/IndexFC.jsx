@@ -6,7 +6,7 @@ const History = () => {
 	const historyList = useSelector(state => state.home.history);
 	const history = [...historyList].reverse().map((el) => <HistoryItem key={el.id} result={el.expression} />);
 	return (
-		<HistoryWrapper id="historyBlock">
+		<HistoryWrapper>
 			<HistoryHeaderWrapper>
 				<HistoryHeader>History</HistoryHeader>
 			</HistoryHeaderWrapper>

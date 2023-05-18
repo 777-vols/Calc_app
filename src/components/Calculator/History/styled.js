@@ -8,7 +8,7 @@ export const HistoryWrapper = styled.div`
 	min-width: 20vw;
 	
 	@media (max-width: 1000px) {
-		min-width: 25vw;
+		min-width: 170px;
 	}
 	@media (max-width: 600px) {
 		border-left: none;
@@ -28,7 +28,7 @@ export const HistoryResults = styled.div`
 	display: flex;
 	flex-direction: column;
 	overflow: auto;
-	max-height: 71vh;
+	max-height: 68vh;
 
 	@media (max-width: 600px) {
 		max-height: 24vh;

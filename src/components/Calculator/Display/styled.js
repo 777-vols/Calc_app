@@ -5,6 +5,7 @@ export const DisplayWrapper = styled.div`
 	grid-area: s;
 	padding: 0px 80px 0px 40px;
 	display: flex;
+	flex-direction: column;
 	align-items: flex-end;
 	justify-content: end;
 	overflow-x: auto;
@@ -31,15 +32,25 @@ export const DisplayWrapper = styled.div`
 		padding-bottom: 5px;
 	}
 `;
-export const Result = styled.span`
+export const ExprContainer = styled.div`
+	min-height: 50%;
+`;
+export const Expression = styled.span`
 	max-width: 78vw;
-	font-size: 42px;
+	font-size: 27px;
+	white-space: nowrap;
+	opacity: 0.65;
+
+	@media (max-width: 600px) {
+		font-size: 20px;
+	}
+`;
+export const Value = styled.span`
+	max-width: 78vw;
+	font-size: 30px;
 	white-space: nowrap;
 
-	@media (max-width: 750px) {
-		font-size: 35px;
-	}
 	@media (max-width: 600px) {
-		font-size: 30px;
+		font-size: 23px;
 	}
 `;

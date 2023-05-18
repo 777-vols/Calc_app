@@ -6,7 +6,7 @@ import {
 class ControlPanel extends React.Component {
 	render() {
 		const toggleHistory = () => {
-			const history = document.getElementById("historyBlock");
+			const history = document.getElementById("history");
 			history.style.display = history.style.display === "none" ? null : "none";
 		};
 

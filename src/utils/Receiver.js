@@ -32,4 +32,15 @@ export const Receiver = class {
 		this.polishArray.push(String(result));
 		return result;
 	}
+
+	isLastSign() {
+		if ("+-*/%".includes(this.polishArray[this.polishArray.length - 1]))
+			return true;
+		else
+			return false;
+	}
+
+	getPolishArray() {
+		return this.polishArray;
+	}
 };
