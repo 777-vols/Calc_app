@@ -59,26 +59,29 @@ describe("Keypad test HomeFC", () => {
 		cy.visit("/");
 
 		cy.enterExpr("1+2-3*4/5%(6)+7.90");
-		cy.get("#result").should("have.text", "1 + 2 - 3 * 4 / 5 % (6) + 7.90");
-		cy.get("[id='C']").click();
+		cy.get("#expression").should("have.text", "1+2-3*4/5%(6)+");
+		cy.get("#result").should("have.text", "7.90");
+		cy.get("[id='CE']").click();
 
 		cy.enterExpr("1+2-3*4/5%(6)+7.90=");
+		cy.get("#expression").should("have.text", "1+2-3*4/5%(6)+7.90");
 		cy.get("#result").should("have.text", "8.500");
-		cy.get("[id='C']").click();
-
-		cy.get("#result").should("have.text", "");
-		cy.get("[id='C']").click();
-	});
-});
-describe("Test CE button", () => {
-	it("Should delete expression and history", () => {
-		cy.visit("/");
-		cy.checkCE(history);
 		cy.get("[id='CE']").click();
+
+		cy.enterExpr("1+2-3*4/5%(6)+7.9");
+		cy.get("[id='C']").click();
+		cy.get("#expression").should("have.text", "1+2-3*4/5%(6)+");
+		cy.get("#result").should("have.text", "7.");
+		cy.get("[id='C']").click();
+		cy.get("#result").should("have.text", "7");
+		cy.get("[id='C']").click();
 		cy.get("#result").should("have.text", "");
-		cy.get("#history").children().should("have.length", 0);
+		cy.get("[id='CE']").click();
+		cy.get("#expression").should("have.text", "");
+		cy.get("#result").should("have.text", "");
 	});
 });
+
 describe("Test expressions result HomeFC", () => {
 	it("Should check results HomeFC", () => {
 		cy.visit("/");
@@ -87,6 +90,7 @@ describe("Test expressions result HomeFC", () => {
 		});
 	});
 });
+
 describe("Test brackets HomeFC", () => {
 	it("Should check brackets HomeFC", () => {
 		cy.visit("/");
@@ -113,6 +117,19 @@ describe("Test history", () => {
 	it("Should check history", () => {
 		cy.visit("/");
 		cy.checkHistory(history);
+		cy.visit("/settings");
+		cy.get("[id='CH']").click();
+		cy.visit("/");
+	});
+});
+describe("Test clear history button", () => {
+	it("Should check clear history button", () => {
+		cy.visit("/");
+		cy.checkHistory(history);
+		cy.visit("/settings");
+		cy.get("[id='CH']").click();
+		cy.visit("/");
+		cy.get("#history").children().should("have.length", 0);
 	});
 });
 

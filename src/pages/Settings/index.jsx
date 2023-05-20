@@ -31,7 +31,7 @@ const Settings = () => {
 							</SettingsSelector>
 						</div>
 						<div>
-							<ClearButton onClick={clearHistory}>Clear All History</ClearButton>
+							<ClearButton id="CH" onClick={clearHistory}>Clear All History</ClearButton>
 						</div>
 					</SettingsPanel>
 				</SettingsWrapper>

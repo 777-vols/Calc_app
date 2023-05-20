@@ -10,7 +10,7 @@ class Display extends React.Component {
 		return (
 			<DisplayWrapper>
 				<ExprContainer>
-					<Expression>{showingResult ? oldExpression :
+					<Expression id="expression">{showingResult ? oldExpression :
 						currentValue ? polishArray : historyItem}</Expression>
 				</ExprContainer>
 				<ExprContainer>

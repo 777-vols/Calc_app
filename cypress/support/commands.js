@@ -7,15 +7,7 @@ Cypress.Commands.add("enterExpr", (expr) => {
 Cypress.Commands.add("checkResult", (expr) => {
 	cy.enterExpr(expr.expression);
 	cy.get("#result").should("have.text", expr.result);
-	cy.get("[id='C']").click();
-});
-
-Cypress.Commands.add("checkCE", (hist) => {
-	hist.forEach((el) => {
-		cy.enterExpr(el.expression);
-		cy.get("#history").children().first().should("have.text", el.result);
-		cy.get("[id='C']").click();
-	});
+	cy.get("[id='CE']").click();
 });
 
 Cypress.Commands.add("checkThemes", (themes, themesList) => {
@@ -31,7 +23,6 @@ Cypress.Commands.add("checkHistory", (hist) => {
 	hist.forEach((el) => {
 		cy.enterExpr(el.expression);
 		cy.get("#history").children().first().should("have.text", el.result);
-		cy.get("[id='C']").click();
+		cy.get("[id='CE']").click();
 	});
 });
-

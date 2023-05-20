@@ -13,7 +13,7 @@ const Display = () => {
 	return (
 		<DisplayWrapper>
 			<ExprContainer>
-				<Expression>{showingResult ? oldExpression :
+				<Expression id="expression">{showingResult ? oldExpression :
 					currentValue ? polishArray : historyItem}</Expression>
 			</ExprContainer>
 			<ExprContainer>
