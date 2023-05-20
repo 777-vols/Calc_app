@@ -19,13 +19,12 @@ Cypress.Commands.add("checkCE", (hist) => {
 });
 
 Cypress.Commands.add("checkThemes", (themes, themesList) => {
-	console.log(themes);
 	themes.forEach(el => {
 		cy.get("select").select(el);
 		cy.get("#wrapper")
 			.should("have.css", "background-color", themesList[el].background)
 			.should("have.css", "color", themesList[el].color);
-	})
+	});
 });
 
 Cypress.Commands.add("checkHistory", (hist) => {

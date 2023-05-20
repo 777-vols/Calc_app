@@ -1,9 +1,10 @@
-import React from "react";
-import { Container } from "@components/Header/styled";
-import Keypad from "@components/Calculator/Keypad/IndexFC";
-import History from "@components/Calculator/History/IndexFC";
-import Display from "@components/Calculator/Display/IndexFC";
 import ControlPanel from "@components/Calculator/ControlPanel/IndexFC";
+import Display from "@components/Calculator/Display/IndexFC";
+import History from "@components/Calculator/History/IndexFC";
+import Keypad from "@components/Calculator/Keypad/IndexFC";
+import { Container } from "@components/Header/styled";
+import React from "react";
+
 import { CalculatorWrapper } from "./styled";
 
 const HomeFC = () => {

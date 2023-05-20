@@ -5,8 +5,13 @@
 		"plugin:cypress/recommended"
 	],
 	"parser": "@babel/eslint-parser",
+	"plugins": [
+		"simple-import-sort"
+	],
 	"rules": {
 		// "no-console": "warn",
+		"simple-import-sort/imports": "error",
+		"simple-import-sort/exports": "error",
 		"prefer-const": "error",
 		"jsx-quotes": [
 			"error",
@@ -25,21 +30,6 @@
 		"semi": [
 			"warn",
 			"always"
-		],
-		"import/order": [
-			"warn",
-			{
-				"groups": [
-					"builtin",
-					"external",
-					"internal",
-					"parent",
-					"sibling",
-					"index",
-					"object",
-					"type"
-				]
-			}
 		]
 	}
 }

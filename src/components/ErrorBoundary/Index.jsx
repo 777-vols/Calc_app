@@ -1,7 +1,8 @@
 import React from "react";
-import { Container } from "../Header/styled";
+
 import { Global } from "../../GlobalStyled";
-import { ErrorPageWrapper, ErrorPage } from "./styled";
+import { Container } from "../Header/styled";
+import { ErrorPage,ErrorPageWrapper } from "./styled";
 
 class ErrorBoundary extends React.Component {
 	constructor(props) {

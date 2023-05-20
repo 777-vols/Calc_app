@@ -1,8 +1,9 @@
 import { DivideCommand } from "@utils/DivideCommand";
-import { MultiplyCommand } from "@utils/MultiplyCommand";
-import { PlusCommand } from "@utils/PlusCommand";
 import { DivWithRemCommand } from "@utils/DivWithRemCommand";
 import { MinusCommand } from "@utils/MinusCommand";
+import { MultiplyCommand } from "@utils/MultiplyCommand";
+import { PlusCommand } from "@utils/PlusCommand";
+
 import signPriority from "./SignPriority";
 
 export default function PolishDecoder(polishArray) {

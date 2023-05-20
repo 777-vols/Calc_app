@@ -1,6 +1,7 @@
 import buttons from "@constants/buttonsValues";
+import ButtonsClickHandler from "@helpers/ButtonsClickHandler";
 import { useDispatch } from "react-redux";
-import ButtonsClickHandler from "@utils/ButtonsClickHandler";
+
 import ButtonComponent from "./Button/indexFC";
 import { KeypadWrapper } from "./styled";
 

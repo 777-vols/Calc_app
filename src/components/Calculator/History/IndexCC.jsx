@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { connect } from "react-redux";
+
 import HistoryItem from "./HistoryItem/IndexCC";
-import { HistoryWrapper, HistoryHeaderWrapper, HistoryHeader, HistoryResults } from "./styled";
+import { HistoryHeader, HistoryHeaderWrapper, HistoryResults,HistoryWrapper } from "./styled";
 
 class History extends React.Component {
 	render() {

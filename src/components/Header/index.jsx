@@ -1,4 +1,4 @@
-import { StyledHeader, Container, HeaderInner, MenuList, LinkWrapper, LogoLink, MenuLink } from "./styled";
+import { Container, HeaderInner, LinkWrapper, LogoLink, MenuLink,MenuList, StyledHeader } from "./styled";
 
 const Header = () => {
 

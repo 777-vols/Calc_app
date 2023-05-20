@@ -3,7 +3,6 @@ import signPriority from "./SignPriority";
 export default function RightPolishNotation(polishArray) {
 	const numbers = [];
 	const signs = [];
-
 	for (let i = 0; i < polishArray.length; i++) {
 		const priority = signPriority(polishArray[i]);
 

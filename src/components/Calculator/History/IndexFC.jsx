@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
-import { HistoryWrapper, HistoryHeaderWrapper, HistoryHeader, HistoryResults } from "./styled";
+
 import HistoryItem from "./HistoryItem/IndexFC";
+import { HistoryHeader, HistoryHeaderWrapper, HistoryResults,HistoryWrapper } from "./styled";
 
 const History = () => {
 	const historyList = useSelector(state => state.home.history);

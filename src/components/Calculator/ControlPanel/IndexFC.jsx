@@ -1,6 +1,6 @@
 import {
-	ControlPanelWrapper, HeaderContainer, ControlPanelHeader, ControlPanelButton
-} from "./styled";
+ControlPanelButton,
+ControlPanelHeader, 	ControlPanelWrapper, HeaderContainer} from "./styled";
 
 const ControlPanel = () => {
 	const toggleHistory = () => {

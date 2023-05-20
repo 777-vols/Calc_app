@@ -1,7 +1,8 @@
-import React from "react";
 import buttons from "@constants/buttonsValues";
+import ButtonsClickHandler from "@helpers/ButtonsClickHandler";
+import React from "react";
 import { connect } from "react-redux";
-import ButtonsClickHandler from "@utils/ButtonsClickHandler";
+
 import ButtonComponent from "./Button/indexCC";
 import { KeypadWrapper } from "./styled";
 

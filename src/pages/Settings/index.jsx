@@ -1,8 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
-import { toggleTheme } from "@store/slices/ThemesSlice";
 import { Container } from "@components/Header/styled";
-import ButtonsClickHandler from "@utils/ButtonsClickHandler";
-import { SettingsWrapper, SettingsHeader, SettingsPanel, SettingsSelector, SelecorHeader, ClearButton } from "./styled";
+import ButtonsClickHandler from "@helpers/ButtonsClickHandler";
+import { toggleTheme } from "@store/slices/ThemesSlice";
+import { useDispatch, useSelector } from "react-redux";
+
+import { ClearButton, SelecorHeader, SettingsHeader, SettingsPanel, SettingsSelector, SettingsWrapper } from "./styled";
 
 const Settings = () => {
 	const dispatch = useDispatch();

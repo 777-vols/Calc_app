@@ -1,6 +1,7 @@
+import PropTypes from "prop-types";
 import React from "react";
 import { connect } from "react-redux";
-import PropTypes from "prop-types";
+
 import { DisplayWrapper, ExprContainer, Expression, Value } from "./styled";
 
 class Display extends React.Component {

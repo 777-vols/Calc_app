@@ -1,11 +1,12 @@
-import { Route, Routes } from "react-router-dom";
 import { AppWrapper } from "./styled";
 import Header from "@components/Header";
-import Settings from "@pages/Settings";
 import HomeCC from "@pages/Home/HomeCC";
 import HomeFC from "@pages/Home/HomeFC";
-import { ThemeProvider } from "styled-components";
+import Settings from "@pages/Settings";
 import { useSelector } from "react-redux";
+import { Route, Routes } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+
 
 
 const App = () => {

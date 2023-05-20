@@ -1,10 +1,10 @@
 import themes from "../../src/constants/themesColors";
 import {
-	expressions,
 	brackets,
 	exceptions,
-	themesList,
+	expressions,
 	history,
+	themesList,
 } from "../expressions/expressions";
 
 

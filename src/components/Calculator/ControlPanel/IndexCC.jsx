@@ -1,7 +1,8 @@
 import React from "react";
+
 import {
-	ControlPanelWrapper, HeaderContainer, ControlPanelHeader, ControlPanelButton
-} from "./styled";
+ControlPanelButton,
+ControlPanelHeader, 	ControlPanelWrapper, HeaderContainer} from "./styled";
 
 class ControlPanel extends React.Component {
 	render() {

@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { ButtonWrapper, Button } from "./styled";
+
+import { Button,ButtonWrapper } from "./styled";
 
 class DivWithRemainderButton extends React.Component {
 	render() {

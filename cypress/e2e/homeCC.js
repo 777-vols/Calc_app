@@ -1,7 +1,7 @@
 import {
-	expressions,
 	brackets,
 	exceptions,
+	expressions,
 } from "../expressions/expressions";
 
 describe("Keypad test HomeCC", () => {

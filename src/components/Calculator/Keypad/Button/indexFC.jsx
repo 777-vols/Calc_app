@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
+
 import DivWithRemainderButton from "../DivWithRemainderButton/indexFC";
-import { ButtonWrapper, DivButtonContainer, Button } from "./styled";
+import { Button,ButtonWrapper, DivButtonContainer } from "./styled";
 
 const ButtonComponent = ({ value, func }) => {
 	if (value === "/") {

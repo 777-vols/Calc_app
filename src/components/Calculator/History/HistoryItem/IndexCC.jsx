@@ -1,6 +1,7 @@
-import React from "react";
 import PropTypes from "prop-types";
-import { HistoryItemWrapper, HistoryItemResult } from "./styled";
+import React from "react";
+
+import { HistoryItemResult,HistoryItemWrapper } from "./styled";
 
 class HistoryItem extends React.Component {
 	render() {
