@@ -1,4 +1,6 @@
-import { Container, HeaderInner, LinkWrapper, LogoLink, MenuLink,MenuList, StyledHeader } from "./styled";
+import * as urls from "@constants/urls";
+
+import { Container, HeaderInner, LinkWrapper, LogoLink, MenuLink, MenuList, StyledHeader } from "./styled";
 
 const Header = () => {
 
@@ -7,28 +9,28 @@ const Header = () => {
 			<Container>
 				<HeaderInner>
 					<LinkWrapper>
-						<LogoLink link_test="logo" to="/">Calculator App</LogoLink>
+						<LogoLink link_test="logo" to={urls.baseUrl}>Calculator App</LogoLink>
 					</LinkWrapper>
 
 					<nav>
 						<MenuList>
 							<li>
 								<LinkWrapper>
-									<MenuLink link_test="home_fc" to="/">
+									<MenuLink link_test="home_fc" to={urls.homeFC}>
 										Home FC
 									</MenuLink>
 								</LinkWrapper>
 							</li>
 							<li>
 								<LinkWrapper>
-									<MenuLink link_test="home_cc" to="/homeCC">
+									<MenuLink link_test="home_cc" to={urls.homeCC}>
 										Home CC
 									</MenuLink>
 								</LinkWrapper>
 							</li>
 							<li>
 								<LinkWrapper>
-									<MenuLink link_test="settings" to="/settings">
+									<MenuLink link_test="settings" to={urls.settings}>
 										Settings
 									</MenuLink>
 								</LinkWrapper>

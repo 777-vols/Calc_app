@@ -1,17 +1,17 @@
 import PropTypes from "prop-types";
 
-import { Button,ButtonWrapper } from "./styled";
+import { Button, ButtonWrapper } from "./styled";
 
-const DivWithRemainderButton = ({ func }) => {
+const DivWithRemainderButton = ({ clickHandler }) => {
 	return (
 		<ButtonWrapper>
-			<Button id={"%"} onClick={() => func("%")}>%</Button>
+			<Button id={"%"} onClick={() => clickHandler("%")}>%</Button>
 		</ButtonWrapper>
 	);
 };
 
 DivWithRemainderButton.propTypes = {
-	func: PropTypes.func,
+	clickHandler: PropTypes.func,
 };
 
 export default DivWithRemainderButton;

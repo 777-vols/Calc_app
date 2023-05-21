@@ -2,7 +2,7 @@ const colors = {
 	light: {
 		background: "rgb(255, 255, 255)",
 		color: "rgb(0, 0, 0)",
-		buttonBackground: "#f1f0f0"
+		buttonBackground: "rgb(241, 240, 240)"
 	},
 	dark: {
 		background: "rgb(94, 94, 94)",
@@ -12,7 +12,7 @@ const colors = {
 	colored: {
 		background: "rgb(174, 140, 191)",
 		color: "rgb(46, 0, 67)",
-		buttonBackground: "#d8bde5"
+		buttonBackground: "rgb(216, 189, 229)"
 	}
 };
 

@@ -1,21 +1,21 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-import { Button,ButtonWrapper } from "./styled";
+import { Button, ButtonWrapper } from "./styled";
 
 class DivWithRemainderButton extends React.Component {
 	render() {
-		const { func } = this.props;
+		const { clickHandler } = this.props;
 		return (
 			<ButtonWrapper>
-				<Button id={"%"} onClick={() => func("%")}>%</Button>
+				<Button id={"%"} onClick={() => clickHandler("%")}>%</Button>
 			</ButtonWrapper>
 		);
 	}
 }
 
 DivWithRemainderButton.propTypes = {
-	func: PropTypes.func,
+	clickHandler: PropTypes.func,
 };
 
 export default DivWithRemainderButton;

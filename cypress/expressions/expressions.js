@@ -90,6 +90,10 @@ export const brackets = [
 		expression: "((2))(((=",
 		result: "2",
 	},
+	{
+		expression: "((-+*2*/-))(((=",
+		result: "-2",
+	},
 ];
 
 export const exceptions = [

@@ -126,6 +126,10 @@ const homeSlice = createSlice({
 				if (state.receiver.getRightBracketsCounter() < state.receiver.getLeftBracketsCounter()) {
 					if (state.currentValue)
 						state.receiver.setPolishArray(state.currentValue);
+					if (state.receiver.isLastSign()) {
+						state.historyItem = state.historyItem.slice(0, state.historyItem.length - 1);
+						state.receiver.setPolishArray();
+					}
 					state.currentOperator = action.type;
 					state.receiver.setRightBracketsCounter();
 					state.receiver.setPolishArray(")");
@@ -134,6 +138,7 @@ const homeSlice = createSlice({
 						state.oldValue = state.currentValue;
 					state.currentValue = "";
 				}
+
 			}
 		},
 		clearExpression(state, action) {

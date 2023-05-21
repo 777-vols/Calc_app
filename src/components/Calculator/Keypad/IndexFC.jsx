@@ -11,7 +11,7 @@ const Keypad = () => {
 		ButtonsClickHandler(dispatch, value);
 	};
 	const buttonsList = buttons.map((el, i) =>
-		<ButtonComponent key={i} value={el} func={buttonClick} />);
+		<ButtonComponent key={i} value={el} clickHandler={buttonClick} />);
 
 	return (
 		<KeypadWrapper>

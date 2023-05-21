@@ -6,9 +6,9 @@ const themesSlice = createSlice({
 	initialState: {
 		themeName: "light",
 		currentTheme: {
-			background: "white",
-			color: "black",
-			buttonBackground: "#f1f0f0"
+			background: "rgb(255, 255, 255)",
+			color: "rgb(0, 0, 0)",
+			buttonBackground: "rgb(241, 240, 240)"
 		}
 	},
 	reducers: {

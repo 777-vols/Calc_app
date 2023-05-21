@@ -37,7 +37,7 @@ export const ControlPanelButton = styled.button`
 	background-color: ${props => props.theme.buttonBackground};
 	color:${props => props.theme.color};
 
-	&:hover{
+	&:active{
 		background-color: rgba(255, 255, 255, 0.7);
 	}
 `;
