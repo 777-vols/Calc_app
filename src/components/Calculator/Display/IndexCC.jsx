@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import { DisplayWrapper, ExprContainer, Expression, Value } from "./styled";
 
-class Display extends React.Component {
+class Display extends React.PureComponent {
 	render() {
 		const { result, showingResult, historyItem, polishArray, oldValue, oldExpression, currentValue } = this.props;
 		return (

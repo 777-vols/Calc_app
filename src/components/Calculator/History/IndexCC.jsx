@@ -3,9 +3,9 @@ import React from "react";
 import { connect } from "react-redux";
 
 import HistoryItem from "./HistoryItem/IndexCC";
-import { HistoryHeader, HistoryHeaderWrapper, HistoryResults,HistoryWrapper } from "./styled";
+import { HistoryHeader, HistoryHeaderWrapper, HistoryResults, HistoryWrapper } from "./styled";
 
-class History extends React.Component {
+class History extends React.PureComponent {
 	render() {
 		const { historyList } = this.props;
 		const history = [...historyList].reverse().map((el) => <HistoryItem key={el.id} result={el.expression} />);

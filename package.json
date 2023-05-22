@@ -9,7 +9,7 @@
 		"webpack:dev": "webpack serve --open --config webpack.dev.js",
 		"webpack:prod": "webpack --config webpack.prod.js",
 		"cypress": "cypress open",
-		"test:cypress": "start-server-and-test start http://localhost:3000 cypress",
+		"test:cypress": "start-server-and-test webpack:dev http://localhost:3000 cypress",
 		"lint": "eslint -c .eslintrc --ext .js,.jsx .",
 		"lint:fix": "yarn lint -- --fix"
 	},

@@ -4,11 +4,17 @@ import React from "react";
 import { Button, ButtonWrapper } from "./styled";
 
 class DivWithRemainderButton extends React.Component {
+	constructor(props) {
+		super(props);
+		this.clickHandler = props.clickHandler;
+	}
+	onClickFunction = () => {
+		this.clickHandler("%");
+	};
 	render() {
-		const { clickHandler } = this.props;
 		return (
 			<ButtonWrapper>
-				<Button id={"%"} onClick={() => clickHandler("%")}>%</Button>
+				<Button id={"%"} onClick={this.onClickFunction}>%</Button>
 			</ButtonWrapper>
 		);
 	}

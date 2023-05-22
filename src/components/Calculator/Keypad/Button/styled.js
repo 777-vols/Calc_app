@@ -20,6 +20,7 @@ export const Button = styled.button`
 	cursor: pointer;
 	transition: all 0.2s ease;
 	position: relative;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
 	&:active {
 		transform: scale(0.90);

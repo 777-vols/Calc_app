@@ -5,7 +5,6 @@ import DivWithRemainderButton from "../DivWithRemainderButton/indexFC";
 import { Button, ButtonWrapper, DivButtonContainer } from "./styled";
 
 const ButtonComponent = ({ value, clickHandler }) => {
-
 	useEffect(() => {
 		const button = document.getElementById(value);
 		button.addEventListener("click", (e) => {
@@ -17,11 +16,15 @@ const ButtonComponent = ({ value, clickHandler }) => {
 		}, [value]);
 	});
 
+	function onClickFunction() {
+		clickHandler(value);
+	}
+
 	if (value === "/") {
 		return (
 			<ButtonWrapper>
 				<DivButtonContainer>
-					<Button id={value} onClick={() => clickHandler(value)}>
+					<Button id={value} onClick={onClickFunction}>
 						{value}
 					</Button>
 					<DivWithRemainderButton clickHandler={clickHandler} />
@@ -31,7 +34,7 @@ const ButtonComponent = ({ value, clickHandler }) => {
 	};
 	return (
 		<ButtonWrapper>
-			<Button id={value} onClick={() => clickHandler(value)}>
+			<Button id={value} onClick={onClickFunction}>
 				{value}
 			</Button>
 		</ButtonWrapper>

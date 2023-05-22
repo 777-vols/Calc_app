@@ -31,12 +31,16 @@ class ButtonComponent extends React.Component {
 		});
 	}
 
+	onClickFunction = () => {
+		this.clickHandler(this.value);
+	};
+
 	render() {
 		if (this.value === "/") {
 			return (
 				<ButtonWrapper>
 					<DivButtonContainer>
-						<Button id={this.value} onClick={() => this.clickHandler(this.value)}>
+						<Button id={this.value} onClick={this.onClickFunction}>
 							{this.value}
 						</Button>
 						<DivWithRemainderButton clickHandler={this.clickHandler} />
@@ -46,7 +50,7 @@ class ButtonComponent extends React.Component {
 		};
 		return (
 			<ButtonWrapper>
-				<Button id={this.value} onClick={() => this.clickHandler(this.value)}>
+				<Button id={this.value} onClick={this.onClickFunction}>
 					{this.value}
 				</Button>
 			</ButtonWrapper>
